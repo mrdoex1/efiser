@@ -177,7 +177,7 @@ body {
 .brand-logo img {
   height: 100%;
   width: auto;
-  max-height: 100px;
+  max-height: 70px;
   filter: brightness(0) invert(1);
   transition: var(--transition-smooth, all 0.35s ease);
 }
@@ -816,6 +816,8 @@ nav a:hover::after {
 
   .client-logo-btn {
     flex-shrink: 0; /* Evita que los botones se achiquen */
+    outline: none;
+  -webkit-tap-highlight-color: transparent; /* Elimina el destello gris/azul por defecto en móviles al tocar */
   }
 }
 }
@@ -1002,6 +1004,7 @@ nav a:hover::after {
   cursor: pointer;
   user-select: none;
   list-style: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .company-section .accordion-header::-webkit-details-marker {
