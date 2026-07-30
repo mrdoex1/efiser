@@ -177,7 +177,7 @@ body {
 .brand-logo img {
   height: 100%;
   width: auto;
-  max-height: 70px;
+  max-height: 100px;
   filter: brightness(0) invert(1);
   transition: var(--transition-smooth, all 0.35s ease);
 }
