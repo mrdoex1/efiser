@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ==========================================
-    // 3. ENVÍO DE FORMULARIO CON EMAILJS
+    // 3. ENVÍO DE FORMULARIO CON EMAILJS + RESETEO AUTOMÁTICO
     // ==========================================
     emailjs.init({
         publicKey: "nWl9Dk6kaLnImlNOW",
@@ -81,8 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             emailjs.sendForm('service_rvselfr', 'template_kavk0c8', this)
                 .then(function() {
-                    contactForm.reset();
-                    
+                    // Ocultamos el formulario y mostramos el mensaje de éxito
                     contactForm.style.display = 'none';
                     if (successBox) {
                         successBox.style.display = 'flex';
@@ -90,6 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.disabled = false;
+
+                    // Esperamos 4 segundos y revertimos el estado (vuelve el formulario)
+                    setTimeout(() => {
+                        if (successBox) {
+                            successBox.style.display = 'none';
+                        }
+                        contactForm.reset();                  // Limpia los campos
+                        contactForm.style.display = 'block';  // Vuelve a mostrar el formulario
+                    }, 4000);
 
                 }, function(error) {
                     console.error('Error al enviar:', error);
@@ -116,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setInterval(nextSlide, slideInterval);
     }
-
     
 });
 
