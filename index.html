@@ -17,6 +17,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- 1. Cargar la librería oficial de EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
 
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="style.css" />
@@ -41,9 +46,7 @@
             <li><a href="#obras-por-cliente">Clientes</a></li>
             <li><a href="#empresa">Empresa</a></li>
             <li>
-              <a href="#contacto" class="btn-cta-copper">
-                 Contacto
-              </a>
+              <a href="#contacto" class="btn-cta-copper"> Contacto </a>
             </li>
           </ul>
         </nav>
@@ -54,12 +57,14 @@
     <section class="hero-dynamic" id="inicio">
       <div class="container hero-split-layout">
         <div class="hero-text-content">
-          <div class="tag-pill">
-             Cobertura Región de Valparaíso
-          </div>
-          <h1>Expertos en Instalación y <span>Mantenimiento de Sistemas de Climatización</span></h1>
+          <div class="tag-pill">Cobertura Región de Valparaíso</div>
+          <h1>
+            Expertos en Instalación y
+            <span>Mantenimiento de Sistemas de Climatización</span>
+          </h1>
           <p>
-            Ofrecemos soporte técnico integral y gestión especializada para proyectos residenciales, comerciales e industriales.
+            Ofrecemos soporte técnico integral y gestión especializada para
+            proyectos residenciales, comerciales e industriales.
           </p>
           <div class="hero-cta-wrapper">
             <a href="#contacto" class="btn-cta-copper btn-hero-lg">
@@ -181,7 +186,9 @@
                 </div>
                 <div>
                   <strong class="tab-widget-title">Sistemas VRV / VRF</strong>
-                  <span class="tab-widget-subtitle">Climatización Inteligente</span>
+                  <span class="tab-widget-subtitle"
+                    >Climatización Inteligente</span
+                  >
                 </div>
               </div>
             </div>
@@ -240,7 +247,9 @@
                 </div>
                 <div>
                   <strong class="tab-widget-title">Tableros de Fuerza</strong>
-                  <span class="tab-widget-subtitle">Automatización Industrial</span>
+                  <span class="tab-widget-subtitle"
+                    >Automatización Industrial</span
+                  >
                 </div>
               </div>
             </div>
@@ -250,7 +259,10 @@
     </section>
 
     <!-- SECCIÓN: OBRAS POR CLIENTE -->
-    <section class="company-section light-bg works-by-client-section" id="obras-por-cliente">
+    <section
+      class="company-section light-bg works-by-client-section"
+      id="obras-por-cliente"
+    >
       <div class="container">
         <div class="section-header-center light-heading">
           <span class="tag">Portafolio Interactivo</span>
@@ -392,51 +404,138 @@
       </div>
     </section>
 
-<!-- SECCIÓN PROVEEDORES - INFINITE MARQUEE ULTRACLEAN -->
-<section class="providers-section" id="proyectos">
-  <div class="container">
-    <div class="section-header-center light-heading">
-      <span class="tag">Respaldo de Marca & Calidad</span>
-      <h2>Nuestros Proveedores Principales</h2>
-    </div>
-  </div>
+    <!-- SECCIÓN PROVEEDORES - INFINITE MARQUEE ULTRACLEAN -->
+    <section class="providers-section" id="proyectos">
+      <div class="container">
+        <div class="section-header-center light-heading">
+          <span class="tag">Respaldo de Marca & Calidad</span>
+          <h2>Nuestros Proveedores Principales</h2>
+        </div>
+      </div>
 
-  <div class="marquee-wrapper" aria-label="Carrusel de proveedores principales">
-    <div class="marquee-track">
-      <!-- BLOQUE 1 (Original) -->
-      <div class="provider-card"><img src="imagenes/Proveedores/anwo.png" alt="ANWO" loading="lazy" /></div>
-      <div class="provider-card"><img src="imagenes/Proveedores/cosmoplas.png" alt="Cosmoplas" loading="lazy" /></div>
-      <div class="provider-card"><img src="imagenes/Proveedores/recal.png" alt="Recal" loading="lazy" /></div>
-      <div class="provider-card"><img src="imagenes/Proveedores/SyP.png" alt="Soler & Palau" loading="lazy" /></div>
-      <div class="provider-card"><img src="imagenes/Proveedores/trespi.png" alt="Trespi" loading="lazy" /></div>
-      <div class="provider-card"><img src="imagenes/Proveedores/rhona.png" alt="Rhona" loading="lazy" /></div>
+      <div
+        class="marquee-wrapper"
+        aria-label="Carrusel de proveedores principales"
+      >
+        <div class="marquee-track">
+          <!-- BLOQUE 1 (Original) -->
+          <div class="provider-card">
+            <img
+              src="imagenes/Proveedores/anwo.png"
+              alt="ANWO"
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card">
+            <img
+              src="imagenes/Proveedores/cosmoplas.png"
+              alt="Cosmoplas"
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card">
+            <img
+              src="imagenes/Proveedores/recal.png"
+              alt="Recal"
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card">
+            <img
+              src="imagenes/Proveedores/SyP.png"
+              alt="Soler & Palau"
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card">
+            <img
+              src="imagenes/Proveedores/trespi.png"
+              alt="Trespi"
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card">
+            <img
+              src="imagenes/Proveedores/rhona.png"
+              alt="Rhona"
+              loading="lazy"
+            />
+          </div>
 
-      <!-- BLOQUE 2 (Duplicado 1) -->
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/cosmoplas.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" /></div>
+          <!-- BLOQUE 2 (Duplicado 1) -->
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img
+              src="imagenes/Proveedores/cosmoplas.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
+          </div>
 
-      <!-- BLOQUE 3 (Duplicado 2) -->
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/cosmoplas.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" /></div>
+          <!-- BLOQUE 3 (Duplicado 2) -->
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img
+              src="imagenes/Proveedores/cosmoplas.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
+          </div>
 
-      <!-- BLOQUE 4 (Duplicado 3) -->
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/cosmoplas.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" /></div>
-      <div class="provider-card" aria-hidden="true"><img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
+          <!-- BLOQUE 4 (Duplicado 3) -->
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img
+              src="imagenes/Proveedores/cosmoplas.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" />
+          </div>
+          <div class="provider-card" aria-hidden="true">
+            <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- INTEGRACIÓN CON ANWO -->
     <section class="anwo-integration-section">
@@ -466,103 +565,109 @@
       </div>
     </section>
 
-<!-- SECCIÓN NUESTRA EMPRESA -->
-<section class="company-section" id="empresa">
-  <div class="container">
-    <div class="section-header-center">
-      <span class="tag">Trayectoria & Filosofía</span>
-      <h2>Nuestra Empresa & Propósito</h2>
-    </div>
-
-    <div class="accordion-container">
-      <!-- Item 1 -->
-      <details class="accordion-item">
-        <summary class="accordion-header">
-          <div class="accordion-header-left">
-            <div class="card-icon"><i class="fa-solid fa-building"></i></div>
-            <h3>Nuestra Empresa</h3>
-          </div>
-          <i class="fa-solid fa-chevron-down accordion-icon"></i>
-        </summary>
-        <div class="accordion-content">
-          <p>
-            Somos una empresa jurídicamente emergente y joven, con vasta
-            experiencia de los socios, compuesta por un equipo profesional,
-            dedicado a generar valor en cada etapa de la relación
-            cliente/proveedor.
-          </p>
+    <!-- SECCIÓN NUESTRA EMPRESA -->
+    <section class="company-section" id="empresa">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="tag">Trayectoria & Filosofía</span>
+          <h2>Nuestra Empresa & Propósito</h2>
         </div>
-      </details>
 
-      <!-- Item 2 -->
-      <details class="accordion-item">
-        <summary class="accordion-header">
-          <div class="accordion-header-left">
-            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
-            <h3>Misión Corporativa</h3>
-          </div>
-          <i class="fa-solid fa-chevron-down accordion-icon"></i>
-        </summary>
-        <div class="accordion-content">
-          <p>
-            Nuestro propósito es proveer y administrar un servicio de calidad
-            en tiempo oportuno y forma óptima, entregando asesoría, seguridad,
-            tranquilidad y confianza en el desarrollo del mantenimiento.<br /><br />
-            Siempre habrá forma de responder: contamos con las herramientas,
-            preparación, experiencia y el compromiso de "hacer bien las cosas".
-          </p>
+        <div class="accordion-container">
+          <!-- Item 1 -->
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-header-left">
+                <div class="card-icon">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <h3>Nuestra Empresa</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </summary>
+            <div class="accordion-content">
+              <p>
+                Somos una empresa jurídicamente emergente y joven, con vasta
+                experiencia de los socios, compuesta por un equipo profesional,
+                dedicado a generar valor en cada etapa de la relación
+                cliente/proveedor.
+              </p>
+            </div>
+          </details>
+
+          <!-- Item 2 -->
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-header-left">
+                <div class="card-icon">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Misión Corporativa</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </summary>
+            <div class="accordion-content">
+              <p>
+                Nuestro propósito es proveer y administrar un servicio de
+                calidad en tiempo oportuno y forma óptima, entregando asesoría,
+                seguridad, tranquilidad y confianza en el desarrollo del
+                mantenimiento.<br /><br />
+                Siempre habrá forma de responder: contamos con las herramientas,
+                preparación, experiencia y el compromiso de "hacer bien las
+                cosas".
+              </p>
+            </div>
+          </details>
+
+          <!-- Item 3 -->
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-header-left">
+                <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+                <h3>Ventaja Comparativa</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </summary>
+            <div class="accordion-content">
+              <p>
+                Está dada por la experiencia técnica, comercial, ejecutiva y
+                administrativa de ambos socios, puestas al servicio del cliente
+                y/o usuario.
+              </p>
+            </div>
+          </details>
+
+          <!-- Item 4 -->
+          <details class="accordion-item">
+            <summary class="accordion-header">
+              <div class="accordion-header-left">
+                <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3>Ventaja Competitiva</h3>
+              </div>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </summary>
+            <div class="accordion-content">
+              <p>
+                Está esencialmente enfocada en la capacidad de adaptación de la
+                real necesidad, la utilización de verdaderos canales efectivos y
+                directos de comunicación.
+              </p>
+            </div>
+          </details>
         </div>
-      </details>
 
-      <!-- Item 3 -->
-      <details class="accordion-item">
-        <summary class="accordion-header">
-          <div class="accordion-header-left">
-            <div class="card-icon"><i class="fa-solid fa-star"></i></div>
-            <h3>Ventaja Comparativa</h3>
-          </div>
-          <i class="fa-solid fa-chevron-down accordion-icon"></i>
-        </summary>
-        <div class="accordion-content">
-          <p>
-            Está dada por la experiencia técnica, comercial, ejecutiva y
-            administrativa de ambos socios, puestas al servicio del cliente y/o
-            usuario.
-          </p>
+        <div class="company-action-wrapper">
+          <a
+            href="recursos/cartaPresentacion2026.pdf"
+            target="_blank"
+            class="btn-carta-empresa"
+          >
+            <i class="fa-solid fa-file-pdf"></i> Descargar Carta de Presentación
+            EFISER
+          </a>
         </div>
-      </details>
-
-      <!-- Item 4 -->
-      <details class="accordion-item">
-        <summary class="accordion-header">
-          <div class="accordion-header-left">
-            <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
-            <h3>Ventaja Competitiva</h3>
-          </div>
-          <i class="fa-solid fa-chevron-down accordion-icon"></i>
-        </summary>
-        <div class="accordion-content">
-          <p>
-            Está esencialmente enfocada en la capacidad de adaptación de la
-            real necesidad, la utilización de verdaderos canales efectivos y
-            directos de comunicación.
-          </p>
-        </div>
-      </details>
-    </div>
-
-    <div class="company-action-wrapper">
-      <a
-        href="recursos/cartaPresentacion2026.pdf"
-        target="_blank"
-        class="btn-carta-empresa"
-      >
-        <i class="fa-solid fa-file-pdf"></i> Descargar Carta de Presentación
-        EFISER
-      </a>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- CONTACTO -->
     <section class="contact-section" id="contacto">
@@ -588,176 +693,172 @@
 
         <div class="contact-card-form">
           <!-- Cambiamos el onsubmit por el endpoint del servicio de correo -->
-      <form action="https://formsubmit.co/doe.mella@gmail.com" method="POST" id="contact-form">
-    <!-- Configuración para FormSubmit -->
-    <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - EFISER">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="form-nombre">Nombre o Razón Social</label>
+              <input
+                type="text"
+                id="form-nombre"
+                name="name"
+                class="form-input"
+                required
+                placeholder="Ej: Juan Pérez / Empresa SpA"
+              />
+            </div>
 
-    <div class="form-group">
-      <label for="form-nombre">Nombre o Razón Social</label>
-      <input
-        type="text"
-        id="form-nombre"
-        name="nombre"
-        class="form-input"
-        required
-        placeholder="Ej: Juan Pérez / Empresa SpA"
-      />
-    </div>
-    <div class="form-group">
-      <label for="form-email">Correo Electrónico</label>
-      <input
-        type="email"
-        id="form-email"
-        name="email"
-        class="form-input"
-        required
-        placeholder="ejemplo@correo.cl"
-      />
-    </div>
-    <div class="form-group">
-      <label for="form-unidad">Unidad de Negocio de Interés</label>
-      <select id="form-unidad" name="unidad" class="form-input" required>
-        <option value="">Seleccione una opción</option>
-        <option value="Instalación">Instalación</option>
-        <option value="Mantención">Mantención</option>
-        <option value="Instalación & Mantención">Instalación & Mantención</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="form-mensaje">Mensaje</label>
-      <textarea
-        id="form-mensaje"
-        name="mensaje"
-        class="form-input"
-        rows="4"
-        required
-        placeholder="Detalle brevemente su requerimiento..."
-      ></textarea>
-    </div>
-    <button type="submit" id="btn-submit" class="btn-cta-copper btn-submit-full">
-       Enviar Correo
-    </button>
-</form>
-    <!-- Campos de configuración de FormSubmit -->
-    <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - EFISER">
-    <input type="hidden" name="_captcha" value="false">
+            <div class="form-group">
+              <label for="form-email">Correo Electrónico</label>
+              <input
+                type="email"
+                id="form-email"
+                name="email"
+                class="form-input"
+                required
+                placeholder="ejemplo@correo.cl"
+              />
+            </div>
 
-    <!-- Tus campos actuales se quedan exactamente igual -->
-    <div class="form-group">
-      <label for="form-nombre">Nombre o Razón Social</label>
-      <input type="text" id="form-nombre" name="nombre" class="form-input" required placeholder="Ej: Juan Pérez / Empresa SpA" />
-    </div>
-    <div class="form-group">
-      <label for="form-email">Correo Electrónico</label>
-      <input type="email" id="form-email" name="email" class="form-input" required placeholder="ejemplo@correo.cl" />
-    </div>
-    <div class="form-group">
-      <label for="form-unidad">Unidad de Negocio de Interés</label>
-      <select id="form-unidad" name="unidad" class="form-input" required>
-        <option value="">Seleccione una opción</option>
-        <option value="Instalación">Instalación</option>
-        <option value="Mantención">Mantención</option>
-        <option value="Instalación & Mantención">Instalación & Mantención</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="form-mensaje">Mensaje</label>
-      <textarea id="form-mensaje" name="mensaje" class="form-input" rows="4" required placeholder="Detalle brevemente su requerimiento..."></textarea>
-    </div>
-    <button type="submit" id="btn-submit" class="btn-cta-copper btn-submit-full">
-       Enviar Correo
-    </button>
-</form>
+            <div class="form-group">
+              <label for="form-unidad">Unidad de Negocio de Interés</label>
+              <select
+                id="form-unidad"
+                name="unidad"
+                class="form-input"
+                required
+              >
+                <option value="">Seleccione una opción</option>
+                <option value="Instalación">Instalación</option>
+                <option value="Mantención">Mantención</option>
+                <option value="Instalación & Mantención">
+                  Instalación & Mantención
+                </option>
+              </select>
+            </div>
 
-<!-- Caja de éxito centrada (debe estar oculta por defecto en tu HTML/CSS) -->
-<div id="form-success-message" class="form-success-box" style="display: none;">
-  <i class="fa-solid fa-circle-check"></i>
-  <div>
-    <h4>¡Mensaje enviado con éxito!</h4>
-    <p>Gracias por contactarnos. Nos pondremos en contacto a la brevedad.</p>
-  </div>
-</div>
+            <div class="form-group">
+              <label for="form-mensaje">Mensaje</label>
+              <textarea
+                id="form-mensaje"
+                name="message"
+                class="form-input"
+                rows="4"
+                required
+                placeholder="Detalle brevemente su requerimiento..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="btn-submit"
+              class="btn-cta-copper btn-submit-full"
+            >
+              Enviar Correo
+            </button>
+          </form>
 
           <!-- Mensaje de éxito oculto inicialmente -->
-          <div id="form-success-message" class="form-success-box" style="display: none;">
+          <div
+            id="form-success-message"
+            class="form-success-box"
+            style="display: none"
+          >
             <i class="fa-solid fa-circle-check"></i>
             <div>
               <h4>¡Mensaje enviado con éxito!</h4>
-              <p>Gracias por contactarnos. Nos pondremos en contacto a la brevedad.</p>
+              <p>
+                Gracias por contactarnos. Nos pondremos en contacto a la
+                brevedad.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- 1. LOGO & DESCRIPCIÓN -->
-      <div class="footer-brand-col">
-        <a href="#inicio" class="footer-logo-link">
-          <img src="imagenes/efiser.png" alt="EFISER SpA" class="footer-logo-img">
-        </a>
-        <p class="footer-brand-desc">
-          Climatización, Calefacción y Servicios Industriales con cobertura en la Región de Valparaíso.
-        </p>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- 1. LOGO & DESCRIPCIÓN -->
+          <div class="footer-brand-col">
+            <a href="#inicio" class="footer-logo-link">
+              <img
+                src="imagenes/efiser.png"
+                alt="EFISER SpA"
+                class="footer-logo-img"
+              />
+            </a>
+            <p class="footer-brand-desc">
+              Climatización, Calefacción y Servicios Industriales con cobertura
+              en la Región de Valparaíso.
+            </p>
+          </div>
+
+          <!-- 2. DATOS DE CONTACTO -->
+          <div class="footer-col-info">
+            <div class="footer-info-item">
+              <i class="fa-solid fa-envelope footer-icon"></i>
+              <div>
+                <strong class="footer-info-label">Correo</strong>
+                <a href="mailto:contacto@efiser.cl" class="footer-info-link"
+                  >contacto@efiser.cl</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-info-item">
+              <i class="fa-solid fa-phone footer-icon"></i>
+              <div>
+                <strong class="footer-info-label">Teléfono N° 1</strong>
+                <a href="tel:+56989113315" class="footer-info-link"
+                  >+56 9 8911 3315</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-info-item">
+              <i class="fa-solid fa-phone footer-icon"></i>
+              <div>
+                <strong class="footer-info-label">Teléfono N° 2</strong>
+                <a href="tel:+56989113315" class="footer-info-link"
+                  >+56 9 8911 3315</a
+                >
+              </div>
+            </div>
+
+            <div class="footer-info-item">
+              <i class="fa-solid fa-location-dot footer-icon"></i>
+              <div>
+                <strong class="footer-info-label">Ubicación Principal</strong>
+                <span class="footer-info-text"
+                  >Región de Valparaíso, Chile</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. REDES SOCIALES -->
+          <div class="footer-col-social">
+            <strong class="footer-social-title">Síguenos en Redes</strong>
+            <a
+              href="https://www.instagram.com/efiser.climatizacion/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon-btn"
+            >
+              <i class="fa-brands fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- BARRA INFERIOR -->
+        <div class="footer-bottom-bar">
+          <p>© 2026 EFISER SpA. Todos los derechos reservados.</p>
+          <p>Climatización &amp; Servicios Industriales</p>
+        </div>
       </div>
-
-      <!-- 2. DATOS DE CONTACTO -->
-      <div class="footer-col-info">
-        <div class="footer-info-item">
-          <i class="fa-solid fa-envelope footer-icon"></i>
-          <div>
-            <strong class="footer-info-label">Correo</strong>
-            <a href="mailto:contacto@efiser.cl" class="footer-info-link">contacto@efiser.cl</a>
-          </div>
-        </div>
-
-        <div class="footer-info-item">
-          <i class="fa-solid fa-phone footer-icon"></i>
-          <div>
-            <strong class="footer-info-label">Teléfono N° 1</strong>
-            <a href="tel:+56989113315" class="footer-info-link">+56 9 8911 3315</a>
-          </div>
-        </div>
-
-        <div class="footer-info-item">
-          <i class="fa-solid fa-phone footer-icon"></i>
-          <div>
-            <strong class="footer-info-label">Teléfono N° 2</strong>
-            <a href="tel:+56989113315" class="footer-info-link">+56 9 8911 3315</a>
-          </div>
-        </div>
-
-        <div class="footer-info-item">
-          <i class="fa-solid fa-location-dot footer-icon"></i>
-          <div>
-            <strong class="footer-info-label">Ubicación Principal</strong>
-            <span class="footer-info-text">Región de Valparaíso, Chile</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. REDES SOCIALES -->
-      <div class="footer-col-social">
-        <strong class="footer-social-title">Síguenos en Redes</strong>
-        <a href="https://www.instagram.com/efiser.climatizacion/" target="_blank" rel="noopener noreferrer" class="social-icon-btn">
-          <i class="fa-brands fa-instagram"></i>
-          <span>Instagram</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- BARRA INFERIOR -->
-    <div class="footer-bottom-bar">
-      <p>© 2026 EFISER SpA. Todos los derechos reservados.</p>
-      <p>Climatización &amp; Servicios Industriales</p>
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <!-- JAVASCRIPT -->
     <script src="scripts.js"></script>

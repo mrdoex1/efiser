@@ -26,18 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (filterContainer) {
         filterContainer.addEventListener('click', function(e) {
-            // Encuentra el botón .client-logo-btn más cercano al clic
             const button = e.target.closest('.client-logo-btn');
             if (!button) return;
 
             const selectedClient = button.getAttribute('data-client');
 
-            // 1. Cambiar clase active en botones
             const allButtons = filterContainer.querySelectorAll('.client-logo-btn');
             allButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // 2. Ocultar / Mostrar obras
             workCards.forEach(card => {
                 const cardClient = card.getAttribute('data-client');
 
@@ -63,75 +60,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-// ==========================================
-// 3. ENVÍO DE FORMULARIO POR CORREO (AJAX)
-// ==========================================
-const contactForm = document.getElementById('contact-form');
-const successBox = document.getElementById('form-success-message');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
-        
-        const submitBtn = document.getElementById('btn-submit');
-        const originalBtnText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-        submitBtn.disabled = true;
-
-        const formData = new FormData(contactForm);
-
-        try {
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            
-
-            // Parsear la respuesta como JSON de forma segura
-            const result = await response.json();
-
-            // Agrega esto temporalmente para revisar en la consola (F12)
-const textoRespuesta = await response.text();
-console.log("Respuesta del servidor:", textoRespuesta);
-
-const result = JSON.parse(textoRespuesta);
-
-            // FormSubmit devuelve success como "true" (texto) o la respuesta OK
-            if (response.ok && (result.success === "true" || result.success === true || response.status === 200)) {
-                // 1. Limpiar los campos del formulario
-                contactForm.reset();
-                
-                // 2. Ocultar el formulario y mostrar el mensaje de éxito
-                contactForm.style.display = 'none';
-                if (successBox) {
-                    successBox.style.display = 'flex';
-                }
-
-                // 3. Restaurar el botón de envío (por si se vuelve a mostrar el formulario)
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-
-                // Opcional: Volver a mostrar el formulario automáticamente después de 6 segundos
-                setTimeout(() => {
-                    if (successBox) successBox.style.display = 'none';
-                    contactForm.style.display = 'block';
-                }, 6000);
-
-            } else {
-                alert(result.message || 'Hubo un error al enviar el mensaje. Por favor, intente nuevamente.');
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Error de conexión o el formulario aún requiere activación en tu correo.');
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-        }
+    // ==========================================
+    // 3. ENVÍO DE FORMULARIO CON EMAILJS
+    // ==========================================
+    emailjs.init({
+        publicKey: "nWl9Dk6kaLnImlNOW",
     });
-}
+
+    const contactForm = document.getElementById('contact-form');
+    const successBox = document.getElementById('form-success-message');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('btn-submit');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+
+            emailjs.sendForm('service_rvselfr', 'template_kavk0c8', this)
+                .then(function() {
+                    contactForm.reset();
+                    
+                    contactForm.style.display = 'none';
+                    if (successBox) {
+                        successBox.style.display = 'flex';
+                    }
+
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+
+                }, function(error) {
+                    console.error('Error al enviar:', error);
+                    alert('Hubo un error al enviar el mensaje. Por favor, intente nuevamente.');
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
 });
