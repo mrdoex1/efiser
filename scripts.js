@@ -1,4 +1,4 @@
-// Function global para los tabs
+// Función global para los tabs
 window.switchTab = function(tabId, btnElement) {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabPanels = document.querySelectorAll('.tab-content-panel');
@@ -99,4 +99,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         });
     }
+
+    // ==========================================
+    // 4. SLIDESHOW AUTOMÁTICO DEL HERO
+    // ==========================================
+    const slides = document.querySelectorAll("#heroSlideshow .slide");
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const slideInterval = 5000; // Cambia de foto cada 5 segundos
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add("active");
+        }
+
+        setInterval(nextSlide, slideInterval);
+    }
+
+    
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('#header nav');
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('is-active');
+      navMenu.classList.toggle('is-active');
+    });
+
+    // Opcional: cerrar el menú al hacer clic en cualquier enlace del menú móvil
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('is-active');
+        navMenu.classList.remove('is-active');
+      });
+    });
+  }
 });

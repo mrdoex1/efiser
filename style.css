@@ -162,7 +162,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: px;
+  position: relative;
 }
 
 /* Logo de la Marca */
@@ -176,6 +177,7 @@ body {
 .brand-logo img {
   height: 100%;
   width: auto;
+  max-height: 70px;
   filter: brightness(0) invert(1);
   transition: var(--transition-smooth, all 0.35s ease);
 }
@@ -185,7 +187,12 @@ body {
   filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(0, 102, 255, 0.5));
 }
 
-/* Menú de Navegación */
+/* Menú de Navegación (Escritorio) */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -197,7 +204,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: var(--text-muted, #8b949e);
+  color: var(--text-light-muted, #8b949e);
   font-weight: 600;
   font-size: 0.88rem;
   text-transform: uppercase;
@@ -207,7 +214,7 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--text-white, #f0f6fc);
+  color: var(--text-light-heading, #f0f6fc);
 }
 
 /* Subrayado animado al pasar el cursor */
@@ -257,24 +264,103 @@ nav a:hover::after {
 }
 
 .btn-cta-copper::after {
-  display: none;
+  display: none !important;
 }
 
 /* ==========================================================================
-   1. HERO (FONDO OSCURO)
+   BOTÓN HAMBURGUESA (MÓVIL)
+   ========================================================================== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--text-light-heading, #ffffff);
+  transition: all 0.3s ease;
+}
+
+/* Animación del menú hamburguesa al activarse */
+.menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   1. HERO (FONDO OSCURO CON SLIDER ANCHO Y DEGRADADO OPTIMIZADO)
    ========================================================================== */
 .hero-dynamic {
   padding-top: 140px;
   padding-bottom: 80px;
   position: relative;
-  background:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(0, 102, 255, 0.15) 0%,
-      transparent 50%
-    ),
-    var(--bg-dark-main);
+  overflow: hidden;
+  background-color: var(--bg-dark-main, #0d1117);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* El carrusel abarca el 65% para dar gran protagonismo a las imágenes rectangulares */
+.hero-slideshow-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-slideshow-container .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
+}
+
+.hero-slideshow-container .slide.active {
+  opacity: 1;
+}
+
+/* Degradado preciso: Sólido hasta el 30% para el texto, transición rápida y la imagen nítida al 50% */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    var(--bg-dark-main, #0d1117) 0%,   
+    var(--bg-dark-main, #0d1117) 0%,  
+    rgba(13, 17, 23, 0.4) 35%,         
+    rgba(13, 17, 23, 0.0) 100%          
+  );
+  z-index: 2;
+}
+
+
+
+/* Asegurar que el contenido del hero esté por encima */
+.hero-dynamic .container {
+  position: relative;
+  z-index: 3;
 }
 
 .hero-split-layout {
@@ -336,35 +422,15 @@ nav a:hover::after {
   font-size: 1rem;
 }
 
-.hero-interactive-canvas {
-  position: relative;
-  width: 100%;
+.hero-interactive-canvas-placeholder {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.canvas-main-photo {
-  width: 100%;
-  max-width: 520px;
-  height: 380px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  position: relative;
-  z-index: 2;
-}
-
-.canvas-main-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 300px;
 }
 
 .widget-tech-float {
   position: relative;
-  margin-top: -30px;
   z-index: 3;
   background: rgba(22, 27, 34, 0.95);
   backdrop-filter: blur(12px);
@@ -601,26 +667,33 @@ nav a:hover::after {
 .works-by-client-section .section-header-center h2 {
   color: var(--text-dark-heading);
 }
-
+/* ==========================================================================
+   FILTROS DE CLIENTES (CORREGIDO Y COMPACTO)
+   ========================================================================== */
+/* ==========================================================================
+   FILTROS DE CLIENTES OPTIMIZADOS PARA MÓVIL (SIN SALTOS)
+   ========================================================================== */
 .client-logo-filter-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 35px;
   flex-wrap: wrap;
 }
 
 .client-logo-btn {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
+  background: rgba(22, 27, 34, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 40px;
-  padding: 8px 18px 8px 10px;
-  display: flex;
+  padding: 8px 16px 8px 8px;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
-  transition: var(--transition-smooth);
+  /* IMPORTANTE: Transición suave que no afecte el layout y tamaño fijo de caja */
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
 }
 
 .client-logo-btn * {
@@ -628,14 +701,15 @@ nav a:hover::after {
 }
 
 .client-logo-btn .logo-wrapper {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #ffffff;
   border-radius: 50%;
-  padding: 4px;
+  padding: 3px;
+  flex-shrink: 0;
 }
 
 .client-logo-btn .logo-wrapper img {
@@ -644,18 +718,25 @@ nav a:hover::after {
   object-fit: contain;
 }
 
+.client-btn-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .client-btn-info .client-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.88rem;
-  color: var(--text-dark-body);
+  font-size: 0.82rem;
+  color: var(--text-light-muted);
+  white-space: nowrap;
 }
 
 .client-btn-info .client-count {
-  font-size: 0.75rem;
-  color: var(--blue-primary);
-  margin-left: 4px;
+  font-size: 0.72rem;
+  color: var(--cyan-accent);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .client-logo-btn:hover {
@@ -663,19 +744,84 @@ nav a:hover::after {
 }
 
 .client-logo-btn:hover .client-name {
-  color: var(--text-dark-heading);
-}
-
-.client-logo-btn.active {
-  background: var(--blue-primary);
-  border-color: var(--blue-primary);
-}
-
-.client-logo-btn.active .client-name,
-.client-logo-btn.active .client-count {
   color: #ffffff;
 }
 
+/* ESTADO ACTIVO FIJO (Sin alterar dimensiones para evitar saltos) */
+.client-logo-btn.active {
+  background: rgba(0, 102, 255, 0.15);
+  border-color: var(--blue-primary);
+  box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
+}
+
+.client-logo-btn.active .client-name {
+  color: #ffffff !important;
+}
+
+.client-logo-btn.active .client-count {
+  color: var(--cyan-accent) !important;
+  background: rgba(0, 102, 255, 0.25);
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN MÓVIL: CARRUSEL HORIZONTAL CON SCROLL SUAVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Contenedor padre que actúa como marco de referencia estático */
+  .client-logo-filter-wrapper {
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    overflow: hidden; /* Oculta lo que se desborde fuera de la pantalla */
+  }
+
+  /* El contenedor que hace el scroll ahora va limpio */
+  .client-logo-filter-nav {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 4px 20px 16px 20px;
+    gap: 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .client-logo-filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* LOS DIFUMINADOS AHORA ESTÁN FIJOS EN LOS BORDES DEL MARCO */
+  @media (max-width: 768px) {
+  .client-logo-filter-nav {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 6px 20px 16px 20px;
+    gap: 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    
+    /* MÁSCARA DE DIFUMINADO EN LOS EXTREMOS (Fija en pantalla al hacer scroll) */
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .client-logo-filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .client-logo-btn {
+    flex-shrink: 0; /* Evita que los botones se achiquen */
+  }
+}
+}
+/* ==========================================================================
+   TARJETAS DE OBRAS (ESTILO DARK TECH / ACORDE A LOS FILTROS)
+   ========================================================================== */
 .works-filter-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -683,14 +829,14 @@ nav a:hover::after {
 }
 
 .work-card-item {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
+  background: rgba(22, 27, 34, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   padding: 20px;
   display: flex;
   align-items: center;
   gap: 16px;
-  transition: var(--transition-smooth);
+  transition: all 0.25s ease;
 }
 
 .work-card-item.hide {
@@ -699,33 +845,36 @@ nav a:hover::after {
 
 .work-card-item:hover {
   border-color: var(--blue-primary);
+  background: rgba(22, 27, 34, 0.95);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .work-card-item .work-icon {
   width: 44px;
   height: 44px;
-  background: rgba(0, 102, 255, 0.1);
-  color: var(--blue-primary);
+  background: rgba(0, 102, 255, 0.15);
+  color: var(--cyan-accent);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
   flex-shrink: 0;
+  border: 1px solid rgba(0, 229, 255, 0.2);
 }
 
 .work-card-item .work-info h4 {
   font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--text-dark-heading);
+  color: var(--text-light-heading);
   margin-bottom: 2px;
   font-weight: 700;
 }
 
 .work-card-item .work-info .work-client {
   font-size: 0.85rem;
-  color: var(--text-dark-muted);
+  color: var(--text-light-muted);
 }
 
 /* ==========================================================================
@@ -1185,12 +1334,119 @@ footer, .footer {
 .footer-bottom-bar p {
   margin: 0;
 }
-
 /* ==========================================================================
-   RESPONSIVO (LIMPIO Y SIN REGLAS FORZADAS)
+   RESPONSIVO UNIFICADO (TABLETS Y MÓVILES HASTA 992px)
    ========================================================================== */
+
 @media (max-width: 992px) {
-  .hero-split-layout,
+  /* 1. Ajustes generales de navegación y header */
+  .nav-inner {
+    height: 80px;
+  }
+
+  .brand-logo {
+    height: 80px;
+  }
+
+  .brand-logo img {
+    max-height: 60px;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Menú desplegable móvil */
+  #header nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 17, 23, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    padding: 24px 0;
+    display: none; 
+  }
+
+  #header nav.is-active {
+    display: block;
+  }
+
+  #header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  #header nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  #header nav ul li a {
+    font-size: 1rem;
+    display: inline-block;
+    padding: 6px 0;
+  }
+
+  #header nav ul li a.btn-cta-copper {
+    width: 80%;
+    max-width: 260px;
+    justify-content: center;
+    margin: 10px auto 0 auto;
+  }
+
+  /* 2. SOLUCIÓN HERO: El carrusel abarca el 100% en pantallas menores a 992px */
+  .hero-slideshow-container {
+    width: 100% !important;
+  }
+
+  /* Overlay unificado vertical que cubre absolutamente todo el banner de lado a lado */
+  .hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(
+      180deg, 
+      rgba(13, 17, 23, 0.92) 0%, 
+      rgba(13, 17, 23, 0.75) 50%, 
+      rgba(13, 17, 23, 0.88) 100%
+    ) !important;
+    z-index: 2 !important;
+  }
+
+  /* Pasamos el layout del hero a una sola columna centrada */
+  .hero-split-layout {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Ocultamos el widget flotante manteniendo su espacio vertical en el hero */
+  .hero-interactive-canvas-placeholder {
+    display: flex;
+    justify-content: center;
+    min-height: 0px;
+    margin-top: 24px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .widget-tech-float {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    justify-content: flex-start;
+    background: rgba(22, 27, 34, 0.9);
+  }
+
+  /* Grillas generales a una columna */
   .panel-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1205,15 +1461,30 @@ footer, .footer {
     margin: 0 auto;
   }
 
-  nav {
-    display: none;
-  }
-
   .hero-text-content h1 {
     font-size: 2.1rem;
   }
+}
 
-  
+/* Optimización específica del Hero Slider para pantallas móviles (ancho completo + overlay vertical) */
+@media (max-width: 768px) {
+  .hero-slideshow-container {
+    width: 100%;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg, 
+      rgba(13, 17, 23, 0.90) 0%, 
+      rgba(13, 17, 23, 0.75) 50%, 
+      rgba(13, 17, 23, 0.85) 100%
+    );
+  }
+
+  .hero-split-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
 /* ==========================================================================
@@ -1225,16 +1496,16 @@ footer, .footer {
   border-radius: var(--radius-md);
   padding: 40px 20px;
   display: flex;
-  flex-direction: column; /* Coloca el ícono arriba y el texto abajo */
-  align-items: center;    /* Centra horizontalmente */
-  justify-content: center;/* Centra verticalmente */
-  text-align: center;     /* Centra el texto */
-  gap: 15px;              /* Espacio entre el ícono y los textos */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
   animation: fadeIn 0.4s ease-in-out;
 }
 
 .form-success-box i {
-  font-size: 3rem;        /* Ícono un poco más grande y vistoso */
+  font-size: 3rem;
   color: var(--blue-primary);
 }
 

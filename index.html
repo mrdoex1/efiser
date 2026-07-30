@@ -31,68 +31,88 @@
     <div id="scroll-progress"></div>
 
     <!-- NAVBAR OSCURO CON LOGO BLANCO -->
-    <header id="header">
-      <div class="container nav-inner">
-        <a href="#inicio" class="brand-logo">
-          <img
-            src="imagenes/efiser.png"
-            alt="EFISER Climatización y Servicios Industriales"
-          />
-        </a>
-        <nav>
-          <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#obras-por-cliente">Clientes</a></li>
-            <li><a href="#empresa">Empresa</a></li>
-            <li>
-              <a href="#contacto" class="btn-cta-copper"> Contacto </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+   <header id="header">
+  <div class="container nav-inner">
+    <a href="#inicio" class="brand-logo">
+      <img
+        src="imagenes/efiser.png"
+        alt="EFISER Climatización y Servicios Industriales"
+      />
+    </a>
+
+    <!-- Botón Hamburguesa para Móviles -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navegación principal -->
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#obras-por-cliente">Clientes</a></li>
+        <li><a href="#empresa">Empresa</a></li>
+        <li>
+          <a href="#contacto" class="btn-cta-copper"> Contacto </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
     <!-- HERO DINÁMICO & MODERNO -->
     <section class="hero-dynamic" id="inicio">
-      <div class="container hero-split-layout">
-        <div class="hero-text-content">
-          <div class="tag-pill">Cobertura Región de Valparaíso</div>
-          <h1>
-            Expertos en Instalación y
-            <span>Mantenimiento de Sistemas de Climatización</span>
-          </h1>
-          <p>
-            Ofrecemos soporte técnico integral y gestión especializada para
-            proyectos residenciales, comerciales e industriales.
-          </p>
-          <div class="hero-cta-wrapper">
-            <a href="#contacto" class="btn-cta-copper btn-hero-lg">
-              Solicitar Asesoría <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
+  <!-- Galería de fondo dinámica integrada -->
+  <div class="hero-slideshow-container" id="heroSlideshow">
+    <div class="slide active" style="background-image: url('imagenes/galeria/foto1.jpeg');"></div>
+    <div class="slide" style="background-image: url('imagenes/galeria/foto4.jpeg');"></div>
+     <div class="slide" style="background-image: url('imagenes/galeria/foto5.jpeg');"></div>
+      <div class="slide" style="background-image: url('imagenes/galeria/foto6.jpeg');"></div>
+       <div class="slide" style="background-image: url('imagenes/galeria/foto7.jpeg');"></div>
+        <div class="slide" style="background-image: url('imagenes/galeria/foto8.jpeg');"></div>
+         <div class="slide" style="background-image: url('imagenes/galeria/foto12.jpeg');"></div>
+          <div class="slide" style="background-image: url('imagenes/galeria/foto11.jpeg');"></div>
+    <!-- Capa oscura de contraste (Overlay) para asegurar la lectura UX/UI -->
+    <div class="hero-overlay"></div>
+  </div>
 
-        <div class="hero-interactive-canvas">
-          <div class="canvas-bg-shape"></div>
-          <div class="canvas-main-photo">
-            <img src="imagenes/img1.jpg" alt="Instalaciones EFISER" />
-          </div>
-          <div class="widget-tech-float">
-            <div class="icon-badge">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div>
-              <strong class="widget-title">Garantía de Servicio</strong>
-              <span class="widget-subtitle">Respuesta Técnica Inmediata</span>
-            </div>
-          </div>
+  <div class="container hero-split-layout">
+    <div class="hero-text-content">
+      <div class="tag-pill">Cobertura Región de Valparaíso</div>
+      <h1>
+        Expertos en Instalación y Mantenimiento
+        <span> de Sistemas de Climatización</span>
+      </h1>
+      <p>
+        Ofrecemos soporte técnico integral y gestión especializada para
+        proyectos residenciales, comerciales e industriales.
+      </p>
+      <div class="hero-cta-wrapper">
+        <a href="#contacto" class="btn-cta-copper btn-hero-lg">
+          Solicitar Asesoría <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Elemento flotante de valor agregado (mantiene la autoridad técnica) -->
+    <div class="hero-interactive-canvas-placeholder">
+      <div class="widget-tech-float">
+        <div class="icon-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <strong class="widget-title">Garantía de Servicio</strong>
+          <span class="widget-subtitle">Respuesta Técnica Inmediata</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <!-- SECCIÓN: SERVICIOS -->
-    <section class="business-section" id="servicios">
+   <section class="business-section" id="servicios">
       <div class="container">
         <div class="section-header-center">
           <span class="tag">Especialización Técnica</span>
@@ -103,42 +123,26 @@
           <button
             type="button"
             class="tab-btn active"
-            onclick="switchTab('tab-calefaccion', this)"
+            onclick="switchTab('tab-instalacion', this)"
           >
-            <i class="fa-solid fa-fire"></i> Calefacción
+            <i class="fa-solid fa-screwdriver-wrench"></i> Instalación
           </button>
           <button
             type="button"
             class="tab-btn"
-            onclick="switchTab('tab-ac', this)"
+            onclick="switchTab('tab-mantenimiento', this)"
           >
-            <i class="fa-solid fa-snowflake"></i> Aire Acondicionado
-          </button>
-          <button
-            type="button"
-            class="tab-btn"
-            onclick="switchTab('tab-ventilacion', this)"
-          >
-            <i class="fa-solid fa-fan"></i> Ventilación
-          </button>
-          <button
-            type="button"
-            class="tab-btn"
-            onclick="switchTab('tab-electricidad', this)"
-          >
-            <i class="fa-solid fa-bolt"></i> Electricidad & Electrónica
+            <i class="fa-solid fa-gears"></i> Mantenimiento
           </button>
         </div>
 
-        <!-- TAB 1: CALEFACCIÓN -->
-        <div id="tab-calefaccion" class="tab-content-panel active">
+        <!-- TAB 1: INSTALACIÓN -->
+        <div id="tab-instalacion" class="tab-content-panel active">
           <div class="panel-grid">
             <div class="panel-info">
-              <h3>Sistemas de Calefacción</h3>
+              <h3>Instalación y Montaje Técnico</h3>
               <p>
-                Calderas individuales y con centrales térmicas colectivas,
-                acumuladores, radiadores, quemadores, termostatos,
-                intercambiadores, estanques, entre otros.
+                Ejecución integral de proyectos y montaje especializado para sistemas de calefacción (calderas y centrales térmicas), aire acondicionado (sistemas VRV, equipos split, fan coils), ventilación y sistemas de electricidad y electrónica industrial con construcción de tableros de fuerza y control.
               </p>
             </div>
 
@@ -146,109 +150,46 @@
               <div class="tab-canvas-bg-shape"></div>
               <div class="tab-canvas-main-photo">
                 <img
-                  src="imagenes/img2.png"
-                  alt="Sistemas de Calefacción Industrial"
+                  src="imagenes/img1.jpg"
+                  alt="Instalación y Montaje Industrial EFISER"
                 />
               </div>
               <div class="tab-widget-float">
                 <div class="icon-badge">
-                  <i class="fa-solid fa-fire-burner"></i>
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
                 </div>
                 <div>
-                  <strong class="tab-widget-title">Centrales Térmicas</strong>
-                  <span class="tab-widget-subtitle">Eficiencia de Consumo</span>
+                  <strong class="tab-widget-title">Montaje Industrial</strong>
+                  <span class="tab-widget-subtitle">Ingeniería y Ejecución</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- TAB 2: AIRE ACONDICIONADO -->
-        <div id="tab-ac" class="tab-content-panel">
+        <!-- TAB 2: MANTENIMIENTO -->
+        <div id="tab-mantenimiento" class="tab-content-panel">
           <div class="panel-grid">
             <div class="panel-info">
-              <h3>Aire Acondicionado</h3>
+              <h3>Mantenimiento Preventivo y Correctivo</h3>
               <p>
-                Equipos compactos para ductos, equipos split de presentación y
-                ductos, fan coils de presentación y ductos, manejadoras de aire
-                y el revolucionario sistema VRV, bombas de Calor.
+                Servicios especializados para asegurar la máxima eficiencia y continuidad operativa de sus equipos: mantención de sistemas de calefacción, climatización, ventilación forzada, quemadores, termostatos y soporte en control y automatización industrial.
               </p>
             </div>
 
             <div class="tab-interactive-canvas">
               <div class="tab-canvas-bg-shape"></div>
               <div class="tab-canvas-main-photo">
-                <img src="imagenes/img3.jpg" alt="Aire Acondicionado" />
+                <img src="imagenes/img2.png" alt="Mantenimiento Industrial EFISER" />
               </div>
               <div class="tab-widget-float">
                 <div class="icon-badge">
-                  <i class="fa-solid fa-snowflake"></i>
+                  <i class="fa-solid fa-gears"></i>
                 </div>
                 <div>
-                  <strong class="tab-widget-title">Sistemas VRV / VRF</strong>
+                  <strong class="tab-widget-title">Soporte Continuo</strong>
                   <span class="tab-widget-subtitle"
-                    >Climatización Inteligente</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB 3: VENTILACIÓN -->
-        <div id="tab-ventilacion" class="tab-content-panel">
-          <div class="panel-grid">
-            <div class="panel-info">
-              <h3>Sistemas de Ventilación</h3>
-              <p>
-                Ventiladores de inyección y de extracción de aire, Manejadoras
-                de aire; Campanas de extracción; Unidades de tratamiento de
-                aire.
-              </p>
-            </div>
-
-            <div class="tab-interactive-canvas">
-              <div class="tab-canvas-bg-shape"></div>
-              <div class="tab-canvas-main-photo">
-                <img src="imagenes/img4.jpg" alt="Sistemas de Ventilación" />
-              </div>
-              <div class="tab-widget-float">
-                <div class="icon-badge">
-                  <i class="fa-solid fa-fan"></i>
-                </div>
-                <div>
-                  <strong class="tab-widget-title">Extracción Forzada</strong>
-                  <span class="tab-widget-subtitle">Renovación de Aire</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB 4: ELECTRICIDAD -->
-        <div id="tab-electricidad" class="tab-content-panel">
-          <div class="panel-grid">
-            <div class="panel-info">
-              <h3>Electricidad y Electrónica General</h3>
-              <p>
-                Montaje y Mantenimiento Industrial, Control y Automatización
-                Industrial, Construcción de Tableros de Fuerza y Control.
-              </p>
-            </div>
-
-            <div class="tab-interactive-canvas">
-              <div class="tab-canvas-bg-shape"></div>
-              <div class="tab-canvas-main-photo">
-                <img src="imagenes/img1.jpg" alt="Electricidad Industrial" />
-              </div>
-              <div class="tab-widget-float">
-                <div class="icon-badge">
-                  <i class="fa-solid fa-bolt"></i>
-                </div>
-                <div>
-                  <strong class="tab-widget-title">Tableros de Fuerza</strong>
-                  <span class="tab-widget-subtitle"
-                    >Automatización Industrial</span
+                    >Eficiencia Operativa</span
                   >
                 </div>
               </div>
@@ -257,7 +198,6 @@
         </div>
       </div>
     </section>
-
     <!-- SECCIÓN: OBRAS POR CLIENTE -->
     <section
       class="company-section light-bg works-by-client-section"
@@ -806,25 +746,17 @@
               </div>
             </div>
 
-            <div class="footer-info-item">
-              <i class="fa-solid fa-phone footer-icon"></i>
-              <div>
-                <strong class="footer-info-label">Teléfono N° 1</strong>
-                <a href="tel:+56989113315" class="footer-info-link"
-                  >+56 9 8911 3315</a
-                >
-              </div>
-            </div>
-
-            <div class="footer-info-item">
-              <i class="fa-solid fa-phone footer-icon"></i>
-              <div>
-                <strong class="footer-info-label">Teléfono N° 2</strong>
-                <a href="tel:+56989113315" class="footer-info-link"
-                  >+56 9 8911 3315</a
-                >
-              </div>
-            </div>
+           <div class="footer-info-item">
+  <i class="fa-solid fa-phone footer-icon"></i>
+  <div>
+    <strong class="footer-info-label">Teléfonos</strong>
+    <div class="footer-phones-group">
+      <a href="tel:+56989113315" class="footer-info-link">+56 9 8911 3315</a>
+      <span class="footer-phone-separator">/</span>
+      <a href="tel:+56987296918" class="footer-info-link">+56 9 8729 6918</a>
+    </div>
+  </div>
+</div>
 
             <div class="footer-info-item">
               <i class="fa-solid fa-location-dot footer-icon"></i>
