@@ -191,7 +191,65 @@
       </div>
     </section>
 
-    <!-- UNIDADES DE NEGOCIO Y SERVICIOS -->
+    <!-- CARROUSEL DE PROVEEDORES PRINCIPALES -->
+    <section class="marquee-section" id="proyectos">
+      <div class="container-wide">
+        <div class="section-header-center light-heading">
+          <span class="tag">Respaldo de Marca & Calidad</span>
+          <h2>Nuestros Proveedores Principales</h2>
+        </div>
+
+        <!-- CONTENEDOR CON NAVEGACIÓN Y CARRUSEL -->
+        <div class="providers-carousel-wrapper">
+          <!-- Botón Anterior -->
+          <button type="button" class="carousel-nav-btn prev-btn" id="providerPrevBtn" aria-label="Anterior">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <!-- Viewport de Desplazamiento -->
+          <div class="providers-carousel-viewport" id="providerViewport">
+            <div class="providers-carousel-track" id="providerTrack">
+              <!-- Card 1: ANWO -->
+              <div class="logo-card-item">
+                <img src="imagenes/Proveedores/anwo.png" alt="ANWO" class="logo-brand-img" />
+              </div>
+
+              <!-- Card 2: Cosmoplas -->
+              <div class="logo-card-item">
+                <img src="imagenes/Proveedores/cosmoplas.png" alt="Cosmoplas" class="logo-brand-img" />
+              </div>
+
+              <!-- Card 3: Recal -->
+              <div class="logo-card-item">
+                <img src="imagenes/proveedores/recal.png" alt="Recal" class="logo-brand-img" />
+              </div>
+
+              <!-- Card 4: S&P -->
+              <div class="logo-card-item">
+                <img src="imagenes/Proveedores/SyP.png" alt="Soler & Palau" class="logo-brand-img" />
+              </div>
+
+              <!-- Card 5: Trespi -->
+              <div class="logo-card-item">
+                <img src="imagenes/Proveedores/trespi.png" alt="Trespi" class="logo-brand-img" />
+              </div>
+
+              <!-- Card 6: Rhona -->
+              <div class="logo-card-item">
+                <img src="imagenes/Proveedores/rhona.png" alt="Rhona" class="logo-brand-img" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón Siguiente -->
+          <button type="button" class="carousel-nav-btn next-btn" id="providerNextBtn" aria-label="Siguiente">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCION SERVICIOS UNIDADES DE NEGOCIO Y SERVICIOS -->
     <section class="business-section" id="servicios">
       <div class="container">
         <div class="section-header-center">
@@ -201,18 +259,19 @@
 
         <div class="tab-nav-wrapper">
           <button
+            type="button"
             class="tab-btn active"
             onclick="switchTab('tab-calefaccion', this)"
           >
             <i class="fa-solid fa-fire"></i> Calefacción
           </button>
-          <button class="tab-btn" onclick="switchTab('tab-ac', this)">
+          <button type="button" class="tab-btn" onclick="switchTab('tab-ac', this)">
             <i class="fa-solid fa-snowflake"></i> Aire Acondicionado
           </button>
-          <button class="tab-btn" onclick="switchTab('tab-ventilacion', this)">
+          <button type="button" class="tab-btn" onclick="switchTab('tab-ventilacion', this)">
             <i class="fa-solid fa-fan"></i> Ventilación
           </button>
-          <button class="tab-btn" onclick="switchTab('tab-electricidad', this)">
+          <button type="button" class="tab-btn" onclick="switchTab('tab-electricidad', this)">
             <i class="fa-solid fa-bolt"></i> Electricidad & Electrónica
           </button>
         </div>
@@ -361,290 +420,141 @@
       </div>
     </section>
 
-    <!-- CARROUSEL DE CLIENTES Y PROYECTOS -->
-    <section class="marquee-section" id="proyectos">
-      <div class="container-wide">
+    <!-- SECCIÓN: OBRAS POR CLIENTE -->
+    <section class="company-section light-bg" id="obras-por-cliente" style="padding: 90px 0; background-color: #f0f4f8">
+      <div class="container">
         <div class="section-header-center light-heading">
-          <span class="tag">Respaldo Comercial & Obras</span>
-          <h2>Proyectos & Clientes que Confiaron</h2>
+          <span class="tag">Portafolio Interactivo</span>
+          <h2>Obras por Cliente</h2>
+          <p style="color: #64748b; margin-top: 10px;">Selecciona una constructora para explorar sus proyectos ejecutados.</p>
         </div>
 
-        <div class="marquee-relative-container">
-          <div class="marquee-viewport-wide" id="marqueeViewport">
-            <div class="marquee-track" id="marqueeTrack">
-              <!-- ================= GRUPO 1 (ORIGINAL) ================= -->
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/copahue.svg"
-                    alt="Copahue"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Constructora Copahue</h4>
-                  <p>Servicio de Instalación</p>
-                </div>
-              </a>
+        <!-- SELECTORES DE CLIENTES CON LOGO -->
+        <div class="client-logo-filter-nav">
+          <!-- Bravo Izquierdo -->
+          <button type="button" class="client-logo-btn active" data-client="bravo-izquierdo">
+            <div class="logo-wrapper">
+              <img src="imagenes/clientes/bravoizquierdo.jpg" alt="Constructora Bravo Izquierdo">
+            </div>
+            <div class="client-btn-info">
+              <span class="client-name">Bravo Izquierdo</span>
+              <span class="client-count">3 Obras</span>
+            </div>
+          </button>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/fiscalia.svg"
-                    alt="Fiscalía"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Fiscalías Locales Región Valparaíso</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <!-- Copahue -->
+          <button type="button" class="client-logo-btn" data-client="copahue">
+            <div class="logo-wrapper">
+              <img src="imagenes/clientes/copahue.png" alt="Constructora Copahue">
+            </div>
+            <div class="client-btn-info">
+              <span class="client-name">Copahue</span>
+              <span class="client-count">1 Obra</span>
+            </div>
+          </button>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/makro.svg"
-                    alt="Makro"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Constructora Makro S.A.</h4>
-                  <p>Servicio de Instalación</p>
-                </div>
-              </a>
+          <!-- EBCO -->
+          <button type="button" class="client-logo-btn" data-client="ebco">
+            <div class="logo-wrapper">
+              <img src="imagenes/clientes/ebco.jpeg" alt="Constructora EBCO">
+            </div>
+            <div class="client-btn-info">
+              <span class="client-name">EBCO</span>
+              <span class="client-count">1 Obra</span>
+            </div>
+          </button>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/mutualchile.png"
-                    alt="Mutual de Seguros"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Mutual de Seguros de Chile</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <!-- Razo -->
+          <button type="button" class="client-logo-btn" data-client="razo">
+            <div class="logo-wrapper">
+              <img src="imagenes/clientes/razo.jpeg" alt="Constructora Razo">
+            </div>
+            <div class="client-btn-info">
+              <span class="client-name">Razo</span>
+              <span class="client-count">1 Obra</span>
+            </div>
+          </button>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/personalarmada.jpg"
-                    alt="Armada"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Dirección General de Personal de la Armada</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <!-- Sigro -->
+          <button type="button" class="client-logo-btn" data-client="sigro">
+            <div class="logo-wrapper">
+              <img src="imagenes/clientes/sigro.png" alt="Constructora Sigro">
+            </div>
+            <div class="client-btn-info">
+              <span class="client-name">Sigro</span>
+              <span class="client-count">2 Obras</span>
+            </div>
+          </button>
+        </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/nexxo.png"
-                    alt="Nexxo"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Oficinas Nexxo S.A.</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+        <!-- GRILLA DE OBRAS -->
+        <div class="works-filter-grid">
+          <!-- Bravo Izquierdo -->
+          <div class="work-card-item light-card" data-client="bravo-izquierdo">
+            <div class="work-icon"><i class="fa-solid fa-city"></i></div>
+            <div class="work-info">
+              <h4>UNAB 2</h4>
+              <span class="work-client">Constructora Bravo Izquierdo</span>
+            </div>
+          </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/dib.avif"
-                    alt="DIB"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Eduardo Dib y Cía Ltda.</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <div class="work-card-item light-card" data-client="bravo-izquierdo">
+            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="work-info">
+              <h4>Senior Suite La Dehesa</h4>
+              <span class="work-client">Constructora Bravo Izquierdo</span>
+            </div>
+          </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/entrenamiento.jpg"
-                    alt="Entrenamiento Armada"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Centro Entrenamiento de la Armada</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <div class="work-card-item light-card" data-client="bravo-izquierdo">
+            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="work-info">
+              <h4>Cartoni 4 Norte</h4>
+              <span class="work-client">Constructora Bravo Izquierdo</span>
+            </div>
+          </div>
 
-              <!-- ================= GRUPO 2 (DUPLICADO PARA LOOP INFINITO) ================= -->
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/copahue.svg"
-                    alt="Copahue"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Constructora Copahue</h4>
-                  <p>Servicio de Instalación</p>
-                </div>
-              </a>
+          <!-- Copahue -->
+          <div class="work-card-item light-card hide" data-client="copahue">
+            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="work-info">
+              <h4>Edificio Mirador Soza</h4>
+              <span class="work-client">Constructora Copahue</span>
+            </div>
+          </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/fiscalia.svg"
-                    alt="Fiscalía"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Fiscalías Locales Región Valparaíso</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <!-- EBCO -->
+          <div class="work-card-item light-card hide" data-client="ebco">
+            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="work-info">
+              <h4>Edificio Entrelomas 5</h4>
+              <span class="work-client">Constructora EBCO</span>
+            </div>
+          </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/makro.svg"
-                    alt="Makro"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Constructora Makro S.A.</h4>
-                  <p>Servicio de Instalación</p>
-                </div>
-              </a>
+          <!-- Razo -->
+          <div class="work-card-item light-card hide" data-client="razo">
+            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="work-info">
+              <h4>Edificio Plaza Los Pinos 1 y 2</h4>
+              <span class="work-client">Constructora Razo</span>
+            </div>
+          </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/mutualchile.png"
-                    alt="Mutual de Seguros"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Mutual de Seguros de Chile</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <!-- Sigro -->
+          <div class="work-card-item light-card hide" data-client="sigro">
+            <div class="work-icon"><i class="fa-solid fa-city"></i></div>
+            <div class="work-info">
+              <h4>Edificios Vista Urbana</h4>
+              <span class="work-client">Constructora Sigro</span>
+            </div>
+          </div>
 
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/personalarmada.jpg"
-                    alt="Armada"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Dirección General de Personal de la Armada</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
-
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/nexxo.png"
-                    alt="Nexxo"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Oficinas Nexxo S.A.</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
-
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/dib.avif"
-                    alt="DIB"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Eduardo Dib y Cía Ltda.</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
-
-              <a href="#" class="logo-card-item">
-                <div class="logo-card-header">
-                  <img
-                    src="imagenes/clientes/entrenamiento.jpg"
-                    alt="Entrenamiento Armada"
-                    class="logo-brand-img"
-                  />
-                  <i
-                    class="fa-solid fa-arrow-up-right-from-square card-link-icon"
-                  ></i>
-                </div>
-                <div class="logo-card-body">
-                  <h4>Centro Entrenamiento de la Armada</h4>
-                  <p>Servicio de Mantenimiento</p>
-                </div>
-              </a>
+          <div class="work-card-item light-card hide" data-client="sigro">
+            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="work-info">
+              <h4>Edificio Mirador Barón</h4>
+              <span class="work-client">Constructora Sigro</span>
             </div>
           </div>
         </div>
@@ -655,11 +565,9 @@
     <section class="contact-section" id="contacto">
       <div class="container contact-grid">
         <div>
-          <span
-            class="section-header-center light-heading"
-            style="text-align: left; margin: 0"
-            ><span class="tag">Atención Personalizada</span></span
-          >
+          <span class="section-header-center light-heading" style="text-align: left; margin: 0">
+            <span class="tag">Atención Personalizada</span>
+          </span>
           <h2
             style="
               font-family: var(--font-display);
@@ -687,7 +595,7 @@
         <div class="contact-card-form">
           <form onsubmit="sendWhatsApp(event)">
             <div class="form-group">
-              <label>Nombre o Razón Social</label>
+              <label for="form-nombre">Nombre o Razón Social</label>
               <input
                 type="text"
                 id="form-nombre"
@@ -697,7 +605,7 @@
               />
             </div>
             <div class="form-group">
-              <label>Correo Electrónico</label>
+              <label for="form-email">Correo Electrónico</label>
               <input
                 type="email"
                 id="form-email"
@@ -707,7 +615,7 @@
               />
             </div>
             <div class="form-group">
-              <label>Unidad de Negocio de Interés</label>
+              <label for="form-unidad">Unidad de Negocio de Interés</label>
               <select id="form-unidad" class="form-input" required>
                 <option value="">Seleccione una opción</option>
                 <option value="Calefacción">Calefacción</option>
@@ -721,7 +629,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Mensaje</label>
+              <label for="form-mensaje">Mensaje</label>
               <textarea
                 id="form-mensaje"
                 class="form-input"
@@ -747,7 +655,7 @@
       </div>
     </section>
 
-    <!-- FOOTER ADAPTADO AL ESTILO ACTUAL (DARK STEEL & TECH BLUE) -->
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div
@@ -892,7 +800,7 @@
             </div>
           </div>
 
-          <!-- 3. REDES SOCIALES (INSTAGRAM) Y ACCIÓN RÁPIDA -->
+          <!-- 3. REDES SOCIALES -->
           <div
             style="
               display: flex;

@@ -49,6 +49,11 @@ body {
   overflow-x: hidden;
 }
 
+/* Regla indispensable para el filtrado dinámico en JS */
+.hide {
+  display: none !important;
+}
+
 /* Barra de progreso de lectura superior */
 #scroll-progress {
   position: fixed;
@@ -81,7 +86,7 @@ body {
 }
 
 /* ==========================================================================
-   HEADER / NAVBAR CON LOGO BLANCO
+   HEADER / NAVBAR
    ========================================================================== */
 header {
   background-color: rgba(13, 17, 23, 0.9);
@@ -118,8 +123,7 @@ header {
 
 .brand-logo:hover img {
   transform: scale(1.03);
-  filter: brightness(0) invert(1)
-    drop-shadow(0 0 8px rgba(0, 102, 255, 0.5));
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(0, 102, 255, 0.5));
 }
 
 nav ul {
@@ -160,11 +164,7 @@ nav a:hover::after {
 }
 
 .btn-cta-copper {
-  background: linear-gradient(
-    135deg,
-    var(--blue-primary) 0%,
-    #0042b3 100%
-  );
+  background: linear-gradient(135deg, var(--blue-primary) 0%, #0042b3 100%);
   color: white !important;
   padding: 12px 24px;
   border-radius: var(--radius-sm);
@@ -193,7 +193,7 @@ nav a:hover::after {
 }
 
 /* ==========================================================================
-   HERO DINÁMICO & MODERNO
+   HERO DINÁMICO
    ========================================================================== */
 .hero-dynamic {
   padding-top: 150px;
@@ -427,8 +427,9 @@ nav a:hover::after {
   color: var(--text-white);
 }
 
-.section-header-center.light-heading h2 {
-  color: var(--text-dark);
+.section-header-center.light-heading h2,
+.light-heading h2 {
+  color: var(--text-dark) !important;
 }
 
 .company-dual-grid {
@@ -485,13 +486,17 @@ nav a:hover::after {
 }
 
 .adv-tech-box {
-  background: var(--bg-card);
+  background: var(--bg-surface);
   border-radius: var(--radius-md);
   padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 3px solid var(--blue-primary);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.adv-tech-box:hover {
+  border-color: var(--cyan-accent);
+  transform: translateY(-4px);
 }
 
 .adv-tech-box h4 {
@@ -592,9 +597,17 @@ nav a:hover::after {
 
 .tab-content-panel {
   display: none;
-  background: 
-    radial-gradient(circle at 100% 0%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 0% 100%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 102, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(0, 229, 255, 0.05) 0%,
+      transparent 40%
+    ),
     var(--bg-card);
   border-radius: var(--radius-lg);
   padding: 50px;
@@ -717,8 +730,9 @@ nav a:hover::after {
 }
 
 /* ==========================================================================
-   MÓDULO: CARRUSEL INFINITO DE LOGOS (OPCIÓN 1 - CSS PURO FLUIDO)
+   CARRUSEL DE PROVEEDORES PRINCIPALES (MANUAL / CON BOTONES)
    ========================================================================== */
+
 .marquee-section {
   padding: 110px 0;
   background: var(--bg-light-surface);
@@ -726,109 +740,85 @@ nav a:hover::after {
   overflow: hidden;
 }
 
-.marquee-relative-container {
+/* Envoltorio principal del carrusel con flechas */
+.providers-carousel-wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
 }
 
-.marquee-viewport-wide {
+/* Área visible con scroll suave horizontal */
+.providers-carousel-viewport {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
   width: 100%;
-  overflow: hidden; /* Se deshabilita el scroll manual */
-  padding: 20px 0;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
+  border-radius: var(--radius-md, 12px);
 }
 
-.marquee-track {
+.providers-carousel-viewport::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Riel interno que contiene las 6 tarjetas */
+.providers-carousel-track {
   display: flex;
-  gap: 24px;
-  width: max-content;
-  animation: continuousScroll 28s linear infinite; /* Movimiento fluido constante */
+  gap: 20px;
+  padding: 10px 5px;
 }
 
-.marquee-viewport-wide:hover .marquee-track {
-  animation-play-state: paused; /* Pausa amigable al pasar el cursor */
+.providers-carousel-track .logo-card-item {
+  flex: 0 0 calc(33.333% - 14px); /* 3 tarjetas por vista en escritorio */
+  scroll-snap-align: start;
+  min-width: 250px;
 }
 
-@keyframes continuousScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%); /* Traslada exactamente el 50% (Primer Grupo) */
-  }
-}
-
+/* Contenedor de la card centrado */
 .logo-card-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 280px;
-  height: 180px;
-  flex-shrink: 0; /* Impide que las tarjetas se contraigan */
+  display: flex !important;
+  align-items: center !important;     /* Centrado vertical */
+  justify-content: center !important; /* Centrado horizontal */
+  height: 130px;                       /* Altura fija cómoda para logos */
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: var(--radius-md);
-  padding: 24px;
+  border-radius: var(--radius-md, 12px);
+  padding: 16px;
   text-decoration: none;
-  color: var(--text-dark);
-  transition: var(--transition-smooth);
+  transition: var(--transition-smooth, all 0.3s ease);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .logo-card-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0, 102, 255, 0.12);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.12);
 }
 
-.logo-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* Imagen del logo centrada y ajustada */
 .logo-brand-img {
-  height: 45px;
-  max-width: 160px;
+  max-width: 85%;
+  max-height: 70px;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  filter: none;
-  transition: var(--transition-smooth);
+  margin: 0 auto;                     /* Asegura centrado propio */
+  display: block;
+  transition: var(--transition-smooth, all 0.3s ease);
 }
 
 .logo-card-item:hover .logo-brand-img {
-  transform: scale(1.05);
-}
-
-.card-link-icon {
-  font-size: 0.9rem;
-  color: #94a3b8;
-  transition: var(--transition-smooth);
-}
-
-.logo-card-item:hover .card-link-icon {
-  color: var(--blue-primary);
-  transform: translate(2px, -2px);
+  transform: scale(1.06);
 }
 
 .logo-card-body h4 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--text-dark, #1e293b);
   margin-bottom: 4px;
 }
 
@@ -842,8 +832,304 @@ nav a:hover::after {
   overflow: hidden;
 }
 
+/* Botones de navegación (Anterior / Siguiente) */
+.carousel-nav-btn {
+  background-color: #ffffff;
+  color: var(--text-dark, #1e293b);
+  border: 1px solid #e2e8f0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  z-index: 5;
+}
+
+.carousel-nav-btn:hover {
+  background-color: white;
+  color: black;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-nav-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsivo para móviles y tablets */
+@media (max-width: 992px) {
+  .providers-carousel-track .logo-card-item {
+    flex: 0 0 calc(50% - 10px); /* 2 tarjetas en tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .providers-carousel-track .logo-card-item {
+    flex: 0 0 100%; /* 1 tarjeta en móvil */
+  }
+
+  .carousel-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+}
+
+.carousel-nav-btn * {
+  pointer-events: none;
+}
+
 /* ==========================================================================
-   CONTACTO EN MODO CLARO
+   SECCIÓN OBRAS POR CLIENTE
+   ========================================================================== */
+
+.works-by-client-section {
+  background-color: var(--bg-white);
+  padding: 100px 0;
+}
+
+/* Grilla para las tarjetas de proyectos */
+.works-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* --- FILTROS (Pills/Chips) --- */
+.client-logo-filter-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client-logo-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 40px;
+  padding: 8px 16px 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: none;
+}
+
+.client-logo-btn .logo-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-white);
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid #cbd5e1;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.client-logo-btn .logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.client-btn-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+}
+
+.client-btn-info .client-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1;
+  transition: var(--transition-smooth);
+}
+
+.client-btn-info .client-count {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+/* Hover suave en reposo */
+.client-logo-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: #cbd5e1;
+}
+
+.client-logo-btn:hover .client-name {
+  color: var(--text-dark);
+}
+
+/* ESTADO ACTIVO */
+.client-logo-btn.active {
+  background: var(--bg-surface);
+  border-color: var(--cyan-accent);
+  box-shadow: 0 4px 14px rgba(13, 17, 23, 0.15);
+}
+
+.client-logo-btn.active .client-name {
+  color: var(--text-white);
+}
+
+.client-logo-btn.active .logo-wrapper {
+  border-color: var(--cyan-accent);
+}
+
+.client-logo-btn.active .client-count {
+  background: rgba(0, 229, 255, 0.15);
+  color: var(--cyan-accent);
+}
+
+/* ==========================================================================
+   CARDS DE OBRAS / PROYECTOS (DISEÑO SOBRIO Y LIMPIO)
+   ========================================================================== */
+.work-card-item.light-card {
+  background: var(--bg-white);
+  border: 1px solid #e2e8f0; /* Borde sutil perimetral sin border-left */
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.work-card-item.light-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(13, 17, 23, 0.08);
+}
+
+.work-card-item.light-card .work-icon {
+  width: 44px;
+  height: 44px;
+  background: #f1f5f9; /* Fondo gris claro muy tenue */
+  color: var(--text-dark); /* Ícono gris oscuro / steel */
+  border: 1px solid #e2e8f0; /* Delimitación sobria */
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+.work-card-item.light-card:hover .work-icon {
+  background: var(
+    --bg-surface
+  ); /* Pasa al gris oscuro tech (#161b22) en hover */
+  color: var(--text-white); /* Ícono blanco */
+  border-color: var(--bg-surface);
+}
+
+.work-card-item.light-card .work-info h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.work-card-item.light-card .work-info .work-client {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   SISTEMA DE FILTROS GENÉRICOS DE PORTAFOLIO
+   ========================================================================== */
+.filter-tab-nav,
+.client-filter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-tab-btn,
+.client-filter-btn {
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-tab-btn i,
+.client-filter-btn i {
+  color: var(--cyan-accent);
+}
+
+.filter-tab-btn:hover,
+.filter-tab-btn.active,
+.client-filter-btn:hover,
+.client-filter-btn.active {
+  background: var(--blue-primary);
+  color: #ffffff;
+  border-color: var(--blue-primary);
+  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
+}
+
+.filter-tab-btn:hover i,
+.filter-tab-btn.active i,
+.client-filter-btn:hover i,
+.client-filter-btn.active i {
+  color: #ffffff;
+}
+
+.portfolio-panel {
+  display: none;
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.portfolio-panel.active {
+  display: block;
+}
+
+/* ==========================================================================
+   CONTACTO
    ========================================================================== */
 .contact-section {
   padding: 100px 0;
@@ -917,16 +1203,24 @@ select.form-input option {
 }
 
 /* ==========================================================================
-   FOOTER CON LOGO INTEGRADO Y REDES SOCIALES
+   FOOTER
    ========================================================================== */
 footer {
-  background: 
-    radial-gradient(circle at 50% 100%, rgba(0, 102, 255, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 10% 20%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
-    #070a0e; /* Fondo base muy oscuro */
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(0, 102, 255, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(0, 229, 255, 0.05) 0%,
+      transparent 40%
+    ),
+    #070a0e;
   color: var(--text-muted);
   padding: 60px 0 35px;
-  border-top: 1px solid rgba(0, 229, 255, 0.15); /* Borde superior con sutil brillo cian */
+  border-top: 1px solid rgba(0, 229, 255, 0.15);
   font-family: var(--font-body);
 }
 
@@ -938,7 +1232,6 @@ footer {
   gap: 28px;
 }
 
-/* Logo de EFISER en Footer */
 .footer-brand-logo {
   display: inline-flex;
   align-items: center;
@@ -957,8 +1250,7 @@ footer {
 .footer-brand-logo:hover img {
   opacity: 1;
   transform: scale(1.04);
-  filter: brightness(0) invert(1)
-    drop-shadow(0 0 10px rgba(0, 102, 255, 0.6));
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(0, 102, 255, 0.6));
 }
 
 .social-links {
@@ -996,6 +1288,9 @@ footer {
   text-align: center;
 }
 
+/* ==========================================================================
+   MEDIA QUERIES - RESPONSIVO MÓVIL Y TABLET (CORREGIDO)
+   ========================================================================== */
 @media (max-width: 992px) {
   .hero-split-layout,
   .company-dual-grid,
@@ -1016,5 +1311,42 @@ footer {
   }
   .hero-text-content h1 {
     font-size: 2.8rem;
+  }
+  .providers-carousel-track .logo-card-item {
+    flex: 0 0 calc(50% - 10px); /* 2 tarjetas en tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .works-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-logo-filter-nav {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 12px;
+    border-radius: 16px;
+  }
+
+  .client-logo-btn {
+    flex-shrink: 0;
+  }
+
+  /* Ajustes responsivos para el carrusel de proveedores en móviles */
+  .providers-carousel-wrapper {
+    gap: 0;
+    padding: 0;
+  }
+
+  /* Oculta los botones de navegación en móviles para dar espacio al scroll táctil nativo */
+  .carousel-nav-btn {
+    display: none !important;
+  }
+
+  .providers-carousel-track .logo-card-item {
+    flex: 0 0 85%; /* Muestra el 85% de la tarjeta para indicar visualmente que se puede deslizar */
+    min-width: unset;
   }
 }
