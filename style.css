@@ -111,7 +111,11 @@ body {
   margin-top: 10px;
 }
 
-/* Tags globales y variantes de contraste */
+/* ==========================================================================
+   CONTROL DE TAGS POR SECCIÓN (ESPECIFICIDAD LIMPIA SIN !IMPORTANT)
+   ========================================================================== */
+
+/* 1. Tag por defecto para secciones oscuras (Obras por Cliente / Trayectoria / etc.) */
 .tag {
   display: inline-block;
   font-size: 0.85rem;
@@ -122,14 +126,21 @@ body {
   margin-bottom: 10px;
 }
 
-/* Ajuste de Tags en zonas claras para alto contraste */
+/* 2. Tags específicos para secciones con fondo claro (Azul #0066ff) */
 .business-section .tag,
 .anwo-integration-section .tag,
 .contact-section .tag,
-.providers-section .tag,
-.works-by-client-section .tag {
+.providers-section .tag {
   color: #0066ff;
 }
+
+/* 3. Tags específicos para secciones oscuras o que deben mantener cian */
+.company-section .tag,
+.works-by-client-section .tag,
+.hero-dynamic .tag-pill {
+  color: var(--cyan-accent);
+}
+
 
 /* ==========================================================================
    HEADER / NAVBAR CON ESTILO ANTIGUO (GLASSMORPHISM & LOGO BLANCO)
@@ -222,13 +233,13 @@ nav a:hover::after {
     var(--blue-primary, #0066ff) 0%,
     #0042b3 100%
   );
-  color: white !important;
+  color: white;
   padding: 12px 24px;
   border-radius: var(--radius-sm, 8px);
   font-weight: 700;
   border: none;
   box-shadow: 0 4px 18px rgba(0, 102, 255, 0.35);
-  transition: var(--transition-smooth, all 0.35s ease) !important;
+  transition: var(--transition-smooth, all 0.35s ease);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -245,16 +256,8 @@ nav a:hover::after {
   box-shadow: 0 8px 25px rgba(0, 102, 255, 0.5);
 }
 
-/* Desactiva la línea inferior en el botón CTA */
 .btn-cta-copper::after {
-  display: none !important;
-}
-
-/* Ocultar menú en pantallas móviles */
-@media (max-width: 992px) {
-  nav {
-    display: none;
-  }
+  display: none;
 }
 
 /* ==========================================================================
@@ -619,7 +622,7 @@ nav a:hover::after {
   cursor: pointer;
   transition: var(--transition-smooth);
 }
-/* Asegura que los clics dentro del botón del logo siempre los registre el <button> */
+
 .client-logo-btn * {
   pointer-events: none;
 }
@@ -724,6 +727,7 @@ nav a:hover::after {
   font-size: 0.85rem;
   color: var(--text-dark-muted);
 }
+
 /* ==========================================================================
    4. PROVEEDORES PRINCIPALES (FONDO CLARO)
    ========================================================================== */
@@ -744,8 +748,6 @@ nav a:hover::after {
   overflow: hidden;
   position: relative;
   padding: 10px 0;
-
-  /* EFECTO DE DIFUMINADO EN EXTREMOS */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -767,7 +769,6 @@ nav a:hover::after {
   gap: 24px;
   width: max-content;
   animation: marquee-scroll 25s linear infinite;
-  /* Mantiene fluidez al renderizar */
   will-change: transform;
 }
 
@@ -800,12 +801,12 @@ nav a:hover::after {
     transform: translateX(0);
   }
   100% {
-    /* Desplaza exactamente el 50% de la tira (la mitad clonada) */
-    transform: translateX(calc(-50% - 12px)); /* -12px ajusta la mitad del gap de 24px */
+    transform: translateX(calc(-50% - 12px));
   }
 }
+
 /* ==========================================================================
-   5. NUESTRA EMPRESA (ACORDEÓN MODERNO & CADA UNO EN SU LÍNEA)
+   5. NUESTRA EMPRESA (ACORDEÓN MODERNO)
    ========================================================================== */
 .company-section {
   background-color: var(--bg-dark-main);
@@ -825,7 +826,6 @@ nav a:hover::after {
   margin: 0 auto;
 }
 
-/* Tarjeta principal desplegable */
 .company-section .accordion-item {
   background: var(--bg-dark-surface);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -839,14 +839,12 @@ nav a:hover::after {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Cuando el desplegable está abierto */
 .company-section .accordion-item[open] {
   background: var(--bg-dark-card);
   border-color: var(--blue-primary);
   box-shadow: 0 8px 25px rgba(0, 102, 255, 0.15);
 }
 
-/* Encabezado en una sola línea */
 .company-section .accordion-header {
   display: flex;
   align-items: center;
@@ -854,11 +852,11 @@ nav a:hover::after {
   padding: 20px 24px;
   cursor: pointer;
   user-select: none;
-  list-style: none; /* Oculta la flecha por defecto del navegador */
+  list-style: none;
 }
 
 .company-section .accordion-header::-webkit-details-marker {
-  display: none; /* Oculta flecha por defecto en Webkit/Safari */
+  display: none;
 }
 
 .company-section .accordion-header-left {
@@ -894,7 +892,6 @@ nav a:hover::after {
   margin: 0;
 }
 
-/* Icono de Flecha con Rotación Animada */
 .company-section .accordion-icon {
   color: var(--text-light-muted);
   font-size: 0.95rem;
@@ -908,9 +905,8 @@ nav a:hover::after {
   color: var(--cyan-accent);
 }
 
-/* Contenido desplegado */
 .company-section .accordion-content {
-  padding: 0 24px 24px 82px; /* Alineado visualmente con el texto del título */
+  padding: 0 24px 24px 82px;
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -921,7 +917,6 @@ nav a:hover::after {
   margin: 0;
 }
 
-/* Animación suave al desplegar */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -966,31 +961,6 @@ nav a:hover::after {
 
 .btn-carta-empresa:hover i {
   color: #ffffff;
-}
-
-/* Ajuste Responsivo para Mobile */
-@media (max-width: 600px) {
-  .company-section .accordion-header {
-    padding: 16px;
-  }
-  
-  .company-section .accordion-header-left {
-    gap: 12px;
-  }
-
-  .company-section .card-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 0.95rem;
-  }
-
-  .company-section .accordion-header h3 {
-    font-size: 1rem;
-  }
-
-  .company-section .accordion-content {
-    padding: 0 16px 20px 16px; /* Ajuste para aprovechar el ancho completo en móviles */
-  }
 }
 
 /* ==========================================================================
@@ -1077,6 +1047,7 @@ select.form-input {
   border: none;
   cursor: pointer;
 }
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
@@ -1099,7 +1070,6 @@ footer, .footer {
   margin-bottom: 50px;
 }
 
-/* Columna 1: Brand */
 .footer-logo-link {
   display: inline-flex;
   height: 120px;
@@ -1120,7 +1090,6 @@ footer, .footer {
   max-width: 300px;
 }
 
-/* Columna 2: Info & Links */
 .footer-col-info {
   display: flex;
   flex-direction: column;
@@ -1160,7 +1129,6 @@ footer, .footer {
   color: var(--cyan-accent);
 }
 
-/* Columna 3: Social */
 .footer-col-social {
   display: flex;
   flex-direction: column;
@@ -1202,7 +1170,6 @@ footer, .footer {
   transform: translateY(-2px);
 }
 
-/* Bottom Bar */
 .footer-bottom-bar {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 25px;
@@ -1218,8 +1185,9 @@ footer, .footer {
 .footer-bottom-bar p {
   margin: 0;
 }
+
 /* ==========================================================================
-   RESPONSIVO
+   RESPONSIVO (LIMPIO Y SIN REGLAS FORZADAS)
    ========================================================================== */
 @media (max-width: 992px) {
   .hero-split-layout,
@@ -1244,23 +1212,4 @@ footer, .footer {
   .hero-text-content h1 {
     font-size: 2.5rem;
   }
-
-/* ==========================================================================
-   ESTILOS GENERALES - ETIQUETAS (.tag)
-   ========================================================================== */
-section .tag,
-header .tag,
-div.tag,
-.section-header-center .tag,
-.business-section .tag,
-.anwo-integration-section .tag,
-.contact-section .tag,
-.providers-section .tag,
-.works-by-client-section .tag {
-  color: #00e5ff !important;
-}
-}
-
-.company-section .tag {
-  color: var(--cyan-accent); /* o #00e5ff */
 }
