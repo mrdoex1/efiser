@@ -1212,4 +1212,41 @@ footer, .footer {
   .hero-text-content h1 {
     font-size: 2.1rem;
   }
+
+  
+}
+
+/* ==========================================================================
+   ESTILOS PARA MENSAJE DE ÉXITO DEL FORMULARIO
+   ========================================================================== */
+.form-success-box {
+  background: rgba(0, 102, 255, 0.08);
+  border: 1px solid var(--blue-primary);
+  border-radius: var(--radius-md);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Coloca el ícono arriba y el texto abajo */
+  align-items: center;    /* Centra horizontalmente */
+  justify-content: center;/* Centra verticalmente */
+  text-align: center;     /* Centra el texto */
+  gap: 15px;              /* Espacio entre el ícono y los textos */
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.form-success-box i {
+  font-size: 3rem;        /* Ícono un poco más grande y vistoso */
+  color: var(--blue-primary);
+}
+
+.form-success-box h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text-dark-heading);
+  margin-bottom: 5px;
+}
+
+.form-success-box p {
+  color: var(--text-dark-body);
+  font-size: 0.95rem;
+  margin: 0;
 }

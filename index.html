@@ -37,12 +37,12 @@
         <nav>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#empresa">Empresa</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#proyectos">Proyectos & Clientes</a></li>
+            <li><a href="#obras-por-cliente">Clientes</a></li>
+            <li><a href="#empresa">Empresa</a></li>
             <li>
               <a href="#contacto" class="btn-cta-copper">
-                <i class="fa-brands fa-whatsapp"></i> Contacto
+                 Contacto
               </a>
             </li>
           </ul>
@@ -59,9 +59,7 @@
           </div>
           <h1>Expertos en Instalación y <span>Mantenimiento de Sistemas de Climatización</span></h1>
           <p>
-            Especialistas en la administración y soporte integral de Sistemas de
-            Climatización, Calefacción y Aire Acondicionado para sectores
-            residenciales, comerciales e industriales.
+            Ofrecemos soporte técnico integral y gestión especializada para proyectos residenciales, comerciales e industriales.
           </p>
           <div class="hero-cta-wrapper">
             <a href="#contacto" class="btn-cta-copper btn-hero-lg">
@@ -256,7 +254,7 @@
       <div class="container">
         <div class="section-header-center light-heading">
           <span class="tag">Portafolio Interactivo</span>
-          <h2>Obras por Cliente</h2>
+          <h2>Algunos de Nuestros Clientes</h2>
           <p class="section-subtitle-muted">
             Selecciona una constructora para explorar sus proyectos ejecutados.
           </p>
@@ -589,55 +587,56 @@
         </div>
 
         <div class="contact-card-form">
-          <form onsubmit="sendWhatsApp(event)">
-            <div class="form-group">
-              <label for="form-nombre">Nombre o Razón Social</label>
-              <input
-                type="text"
-                id="form-nombre"
-                class="form-input"
-                required
-                placeholder="Ej: Juan Pérez / Empresa SpA"
-              />
+          <!-- Cambiamos el onsubmit por el endpoint del servicio de correo -->
+       <form action="https://formsubmit.co/doe.mella@gmail.com" method="POST" id="contact-form">
+    <!-- Campos de configuración de FormSubmit -->
+    <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - EFISER">
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Tus campos actuales se quedan exactamente igual -->
+    <div class="form-group">
+      <label for="form-nombre">Nombre o Razón Social</label>
+      <input type="text" id="form-nombre" name="nombre" class="form-input" required placeholder="Ej: Juan Pérez / Empresa SpA" />
+    </div>
+    <div class="form-group">
+      <label for="form-email">Correo Electrónico</label>
+      <input type="email" id="form-email" name="email" class="form-input" required placeholder="ejemplo@correo.cl" />
+    </div>
+    <div class="form-group">
+      <label for="form-unidad">Unidad de Negocio de Interés</label>
+      <select id="form-unidad" name="unidad" class="form-input" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Instalación">Instalación</option>
+        <option value="Mantención">Mantención</option>
+        <option value="Instalación & Mantención">Instalación & Mantención</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="form-mensaje">Mensaje</label>
+      <textarea id="form-mensaje" name="mensaje" class="form-input" rows="4" required placeholder="Detalle brevemente su requerimiento..."></textarea>
+    </div>
+    <button type="submit" id="btn-submit" class="btn-cta-copper btn-submit-full">
+       Enviar Correo
+    </button>
+</form>
+
+<!-- Caja de éxito centrada (debe estar oculta por defecto en tu HTML/CSS) -->
+<div id="form-success-message" class="form-success-box" style="display: none;">
+  <i class="fa-solid fa-circle-check"></i>
+  <div>
+    <h4>¡Mensaje enviado con éxito!</h4>
+    <p>Gracias por contactarnos. Nos pondremos en contacto a la brevedad.</p>
+  </div>
+</div>
+
+          <!-- Mensaje de éxito oculto inicialmente -->
+          <div id="form-success-message" class="form-success-box" style="display: none;">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+              <h4>¡Mensaje enviado con éxito!</h4>
+              <p>Gracias por contactarnos. Nos pondremos en contacto a la brevedad.</p>
             </div>
-            <div class="form-group">
-              <label for="form-email">Correo Electrónico</label>
-              <input
-                type="email"
-                id="form-email"
-                class="form-input"
-                required
-                placeholder="ejemplo@correo.cl"
-              />
-            </div>
-            <div class="form-group">
-              <label for="form-unidad">Unidad de Negocio de Interés</label>
-              <select id="form-unidad" class="form-input" required>
-                <option value="">Seleccione una opción</option>
-                <option value="Calefacción">Calefacción</option>
-                <option value="Aire Acondicionado">Aire Acondicionado</option>
-                <option value="Sistemas de Ventilación">
-                  Sistemas de Ventilación
-                </option>
-                <option value="Electricidad y Electrónica General">
-                  Electricidad y Electrónica General
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="form-mensaje">Mensaje</label>
-              <textarea
-                id="form-mensaje"
-                class="form-input"
-                rows="4"
-                required
-                placeholder="Detalle brevemente su requerimiento..."
-              ></textarea>
-            </div>
-            <button type="submit" class="btn-cta-copper btn-submit-full">
-              <i class="fa-brands fa-whatsapp"></i> Enviar Consulta por WhatsApp
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>

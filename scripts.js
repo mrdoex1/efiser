@@ -63,28 +63,75 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================
-    // 3. ENVÍO DE FORMULARIO A WHATSAPP
-    // ==========================================
-    window.sendWhatsApp = function(event) {
+// ==========================================
+// 3. ENVÍO DE FORMULARIO POR CORREO (AJAX)
+// ==========================================
+const contactForm = document.getElementById('contact-form');
+const successBox = document.getElementById('form-success-message');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(event) {
         event.preventDefault();
         
-        const name = document.getElementById('form-nombre')?.value.trim();
-        const email = document.getElementById('form-email')?.value.trim();
-        const unit = document.getElementById('form-unidad')?.value;
-        const message = document.getElementById('form-mensaje')?.value.trim();
+        const submitBtn = document.getElementById('btn-submit');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
 
-        if (!name || !email || !message) {
-            alert('Por favor, complete todos los campos requeridos.');
-            return;
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            
+
+            // Parsear la respuesta como JSON de forma segura
+            const result = await response.json();
+
+            // Agrega esto temporalmente para revisar en la consola (F12)
+const textoRespuesta = await response.text();
+console.log("Respuesta del servidor:", textoRespuesta);
+
+const result = JSON.parse(textoRespuesta);
+
+            // FormSubmit devuelve success como "true" (texto) o la respuesta OK
+            if (response.ok && (result.success === "true" || result.success === true || response.status === 200)) {
+                // 1. Limpiar los campos del formulario
+                contactForm.reset();
+                
+                // 2. Ocultar el formulario y mostrar el mensaje de éxito
+                contactForm.style.display = 'none';
+                if (successBox) {
+                    successBox.style.display = 'flex';
+                }
+
+                // 3. Restaurar el botón de envío (por si se vuelve a mostrar el formulario)
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+
+                // Opcional: Volver a mostrar el formulario automáticamente después de 6 segundos
+                setTimeout(() => {
+                    if (successBox) successBox.style.display = 'none';
+                    contactForm.style.display = 'block';
+                }, 6000);
+
+            } else {
+                alert(result.message || 'Hubo un error al enviar el mensaje. Por favor, intente nuevamente.');
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error de conexión o el formulario aún requiere activación en tu correo.');
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
         }
-
-        const phone = '56987296918';
-        const text = `Hola EFISER, quisiera realizar una consulta:\n\n*Nombre/Empresa:* ${name}\n*Email:* ${email}\n*Área de Interés:* ${unit || 'No especificada'}\n*Mensaje:* ${message}`;
-        
-        const encodedText = encodeURIComponent(text);
-        const whatsappUrl = `https://wa.me/${phone}?text=${encodedText}`;
-        
-        window.open(whatsappUrl, '_blank');
-    };
+    });
+}
 });
