@@ -45,7 +45,7 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family:Outfit, sans-serif;
   background-color: var(--bg-dark-main);
   color: var(--text-light-body);
   line-height: 1.6;
@@ -98,7 +98,7 @@ body {
   font-size: 2.4rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 12px;
+  margin: 0 0 12px 0;
 }
 
 .section-header-center p {
@@ -246,7 +246,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: px;
+  height: 90px;
   position: relative;
 }
 
@@ -600,143 +600,124 @@ nav a:hover::after {
 /* ==========================================================================
    2. UNIDADES DE NEGOCIO Y SERVICIOS (FONDO CLARO)
    ========================================================================== */
-.business-section {
-  padding: 90px 0;
-  background: var(--bg-light-surface);
-  border-bottom: 1px solid #e2e8f0;
+.services-section-light {
+    background-color: #f8fafc;
+    padding: 80px 20px;
 }
 
-.business-section .section-header-center h2 {
-  color: var(--text-dark-heading);
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.business-section .section-header-center p {
-  color: var(--text-dark-muted);
+/* Encabezado */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.tab-nav-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+.section-tag {
+    color: #0066ff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
 }
 
-.tab-btn {
-  background: var(--bg-white);
-  border: 1px solid #cbd5e1;
-  color: var(--text-dark-heading);
-  padding: 12px 24px;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.section-header h2 {
+    color: #0a0f1e;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
 }
 
-.tab-btn:hover,
-.tab-btn.active {
-  background: var(--blue-primary);
-  color: #ffffff;
-  border-color: var(--blue-primary);
-  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.25);
+/* Grilla Dual de 2 columnas */
+.services-dual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
-.tab-content-panel {
-  display: none;
-  background: var(--bg-white);
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+/* Tarjeta Moderna */
+.service-card-modern {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tab-content-panel.active {
-  display: block;
+.service-card-modern:hover {
+    transform: translateY(-5px);
+    
 }
 
-.panel-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
-  align-items: center;
+/* Imagen de la tarjeta */
+.service-image-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
 }
 
-.panel-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  color: var(--text-dark-heading);
-  margin-bottom: 14px;
-  font-weight: 800;
+.service-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.panel-info p {
-  color: var(--text-dark-body);
-  font-size: 1rem;
-  line-height: 1.6;
+.service-card-modern:hover .service-image-wrapper img {
+    transform: scale(1.05);
 }
 
-.tab-interactive-canvas {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Contenido de la tarjeta */
+.service-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.tab-canvas-main-photo {
-  width: 100%;
-  max-width: 480px;
-  height: 300px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid #cbd5e1;
+.service-content h3 {
+    color: #0a0f1e;
+    font-size: 20px;
+    margin-bottom: 12px;
 }
 
-.tab-canvas-main-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.service-content p {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-.tab-widget-float {
-  margin-top: -20px;
-  z-index: 3;
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: var(--radius-md);
-  padding: 10px 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Enlace o botón de acción interno */
+.service-action-link {
+    color: #0066ff;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transform-origin: left center;
+    transition: color 0.2s ease;
 }
 
-.tab-widget-float .icon-badge {
-  width: 36px;
-  height: 36px;
-  background: rgba(0, 102, 255, 0.1);
-  color: var(--blue-primary);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+.service-action-link:hover {
+    transform: scale(1.05);
 }
 
-.tab-widget-title {
-  display: block;
-  color: var(--text-dark-heading);
-  font-size: 0.85rem;
-}
-
-.tab-widget-subtitle {
-  color: var(--text-dark-muted);
-  font-size: 0.75rem;
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .services-dual-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==========================================================================
@@ -750,13 +731,21 @@ nav a:hover::after {
 
 .works-by-client-section .section-header-center h2 {
   color: var(--text-dark-heading);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
 }
+
 /* ==========================================================================
-   FILTROS DE CLIENTES (CORREGIDO Y COMPACTO)
+   FILTROS DE CLIENTES OPTIMIZADOS PARA MÓVIL (CON MÁSCARA Y CONTENEDOR ESTÁTICO)
    ========================================================================== */
-/* ==========================================================================
-   FILTROS DE CLIENTES OPTIMIZADOS PARA MÓVIL (SIN SALTOS)
-   ========================================================================== */
+.client-logo-filter-wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .client-logo-filter-nav {
   display: flex;
   justify-content: center;
@@ -775,7 +764,6 @@ nav a:hover::after {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  /* IMPORTANTE: Transición suave que no afecte el layout y tamaño fijo de caja */
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   box-sizing: border-box;
 }
@@ -831,7 +819,7 @@ nav a:hover::after {
   color: #ffffff;
 }
 
-/* ESTADO ACTIVO FIJO (Sin alterar dimensiones para evitar saltos) */
+/* ESTADO ACTIVO FIJO */
 .client-logo-btn.active {
   background: rgba(0, 102, 255, 0.15);
   border-color: var(--blue-primary);
@@ -850,48 +838,29 @@ nav a:hover::after {
 }
 
 /* ==========================================================================
-   ADAPTACIÓN MÓVIL: CARRUSEL HORIZONTAL CON SCROLL SUAVE
+   ADAPTACIÓN MÓVIL: CARRUSEL HORIZONTAL CON SCROLL SUAVE Y MÁSCARA FIJA
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Contenedor padre que actúa como marco de referencia estático */
   .client-logo-filter-wrapper {
-    position: relative;
-    margin-left: -15px;
-    margin-right: -15px;
-    overflow: hidden; /* Oculta lo que se desborde fuera de la pantalla */
+    margin-left: -24px;
+    margin-right: -24px;
+    width: calc(100% + 48px);
+    overflow: hidden;
   }
 
-  /* El contenedor que hace el scroll ahora va limpio */
   .client-logo-filter-nav {
     display: flex;
     justify-content: flex-start;
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding: 4px 20px 16px 20px;
-    gap: 10px;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .client-logo-filter-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* LOS DIFUMINADOS AHORA ESTÁN FIJOS EN LOS BORDES DEL MARCO */
-  @media (max-width: 768px) {
-  .client-logo-filter-nav {
-    display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding: 6px 20px 16px 20px;
+    padding: 6px 24px 16px 24px;
     gap: 10px;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     
-    /* MÁSCARA DE DIFUMINADO EN LOS EXTREMOS (Fija en pantalla al hacer scroll) */
-    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    /* Máscara de difuminado estática en los extremos del carrusel móvil */
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   }
 
   .client-logo-filter-nav::-webkit-scrollbar {
@@ -899,19 +868,20 @@ nav a:hover::after {
   }
 
   .client-logo-btn {
-    flex-shrink: 0; /* Evita que los botones se achiquen */
+    flex-shrink: 0;
     outline: none;
-  -webkit-tap-highlight-color: transparent; /* Elimina el destello gris/azul por defecto en móviles al tocar */
+    -webkit-tap-highlight-color: transparent;
   }
 }
-}
+
 /* ==========================================================================
    TARJETAS DE OBRAS (ESTILO DARK TECH / ACORDE A LOS FILTROS)
    ========================================================================== */
 .works-filter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
   gap: 20px;
+  justify-content: center;
 }
 
 .work-card-item {
@@ -975,6 +945,11 @@ nav a:hover::after {
 
 .providers-section .section-header-center h2 {
   color: var(--text-dark-heading);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
 }
 
 .marquee-wrapper {
@@ -1051,6 +1026,11 @@ nav a:hover::after {
 
 .company-section .section-header-center h2 {
   color: var(--text-light-heading);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
 }
 
 .company-section .accordion-container {
@@ -1215,8 +1195,10 @@ nav a:hover::after {
 
 .contact-title {
   font-family: var(--font-display);
-  font-size: 2.2rem;
-  margin: 10px 0 20px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
   color: var(--text-dark-heading);
 }
 
@@ -1421,12 +1403,11 @@ footer, .footer {
 .footer-bottom-bar p {
   margin: 0;
 }
+
 /* ==========================================================================
    RESPONSIVO UNIFICADO (TABLETS Y MÓVILES HASTA 992px)
    ========================================================================== */
-
 @media (max-width: 992px) {
-  /* 1. Ajustes generales de navegación y header */
   .nav-inner {
     height: 80px;
   }
@@ -1439,12 +1420,10 @@ footer, .footer {
     max-height: 60px;
   }
 
-  /* Mostrar botón hamburguesa */
   .menu-toggle {
     display: block;
   }
 
-  /* Menú desplegable móvil */
   #header nav {
     position: absolute;
     top: 100%;
@@ -1488,12 +1467,10 @@ footer, .footer {
     margin: 10px auto 0 auto;
   }
 
-  /* 2. SOLUCIÓN HERO: El carrusel abarca el 100% en pantallas menores a 992px */
   .hero-slideshow-container {
     width: 100% !important;
   }
 
-  /* Overlay unificado vertical que cubre absolutamente todo el banner de lado a lado */
   .hero-overlay {
     position: absolute !important;
     top: 0 !important;
@@ -1509,13 +1486,11 @@ footer, .footer {
     z-index: 2 !important;
   }
 
-  /* Pasamos el layout del hero a una sola columna centrada */
   .hero-split-layout {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
 
-  /* Ocultamos el widget flotante manteniendo su espacio vertical en el hero */
   .hero-interactive-canvas-placeholder {
     display: flex;
     justify-content: center;
@@ -1533,7 +1508,6 @@ footer, .footer {
     background: rgba(22, 27, 34, 0.9);
   }
 
-  /* Grillas generales a una columna */
   .panel-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1553,7 +1527,6 @@ footer, .footer {
   }
 }
 
-/* Optimización específica del Hero Slider para pantallas móviles (ancho completo + overlay vertical) */
 @media (max-width: 768px) {
   .hero-slideshow-container {
     width: 100%;
@@ -1609,3 +1582,98 @@ footer, .footer {
   margin: 0;
 }
 
+/* ==========================================================================
+   ESTILOS DE CREDENCIAL / CERTIFICACIÓN ANWO (ALTERNATIVA 1)
+   ========================================================================== */
+.anwo-certified-header-card {
+  background: var(--bg-white);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 50px;
+}
+
+.anwo-seal-wrapper {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 5px;
+  border-radius: var(--radius-sm);
+}
+
+.anwo-seal-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.anwo-certified-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.certified-badge-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0066ff;
+  margin-bottom: 6px;
+}
+
+.anwo-certified-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark-heading);
+  margin-bottom: 8px;
+}
+
+.anwo-certified-info p {
+  color: var(--text-dark-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.anwo-certified-action {
+  white-space: nowrap;
+}
+
+.btn-cert-action {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+}
+
+/* Responsivo para la credencial de ANWO en móviles y tablets */
+@media (max-width: 992px) {
+  .anwo-certified-header-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .anwo-seal-wrapper {
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  .anwo-certified-action {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-cert-action {
+    width: 100%;
+    justify-content: center;
+  }
+}

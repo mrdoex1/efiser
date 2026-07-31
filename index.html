@@ -112,92 +112,44 @@
 </section>
 
     <!-- SECCIÓN: SERVICIOS -->
-   <section class="business-section" id="servicios">
-      <div class="container">
-        <div class="section-header-center">
-          <span class="tag">Especialización Técnica</span>
-          <h2>Servicios</h2>
+   <section id="servicios" class="services-section-light">
+    <div class="services-container">
+        <!-- Encabezado de sección -->
+        <div class="section-header">
+            <span class="section-tag">LO QUE HACEMOS</span>
+            <h2>Servicios Especializados</h2>
         </div>
 
-        <div class="tab-nav-wrapper">
-          <button
-            type="button"
-            class="tab-btn active"
-            onclick="switchTab('tab-instalacion', this)"
-          >
-            <i class="fa-solid fa-screwdriver-wrench"></i> Instalación
-          </button>
-          <button
-            type="button"
-            class="tab-btn"
-            onclick="switchTab('tab-mantenimiento', this)"
-          >
-            <i class="fa-solid fa-gears"></i> Mantenimiento
-          </button>
+        <!-- Grilla Dual (2 Columnas simétricas) -->
+        <div class="services-dual-grid">
+            
+            <!-- Servicio 1 -->
+            <div class="service-card-modern">
+                <div class="service-image-wrapper">
+                    <img src="imagenes/galeria/foto11.jpeg" alt="Instalación y Montaje Técnico">
+                </div>
+                <div class="service-content">
+                    <h3>Instalación y Montaje Técnico</h3>
+                    <p>Desarrollamos proyectos de instalación y montaje de sistemas de climatización de alta eficiencia para el sector industrial y corporativo, asegurando estándares óptimos de rendimiento.</p>
+                    <a href="#contacto" class="service-action-link">Cotizar Servicio <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Servicio 2 -->
+            <div class="service-card-modern">
+                <div class="service-image-wrapper">
+                    <img src="imagenes/galeria/foto12.jpeg" alt="Mantenimiento de Climatización">
+                </div>
+                <div class="service-content">
+                    <h3>Mantenimiento Preventivo y Correctivo</h3>
+                    <p>Planes integrales de mantenimiento para garantizar la continuidad operacional, reducir consumo energético y prolongar la vida útil de los equipos de climatización de tus instalaciones.</p>
+                    <a href="#contacto" class="service-action-link">Cotizar Servicio <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
         </div>
-
-        <!-- TAB 1: INSTALACIÓN -->
-        <div id="tab-instalacion" class="tab-content-panel active">
-          <div class="panel-grid">
-            <div class="panel-info">
-              <h3>Instalación y Montaje Técnico</h3>
-              <p>
-                Ejecución integral de proyectos y montaje especializado para sistemas de calefacción (calderas y centrales térmicas), aire acondicionado (sistemas VRV, equipos split, fan coils), ventilación y sistemas de electricidad y electrónica industrial con construcción de tableros de fuerza y control.
-              </p>
-            </div>
-
-            <div class="tab-interactive-canvas">
-              <div class="tab-canvas-bg-shape"></div>
-              <div class="tab-canvas-main-photo">
-                <img
-                  src="imagenes/img1.jpg"
-                  alt="Instalación y Montaje Industrial EFISER"
-                />
-              </div>
-              <div class="tab-widget-float">
-                <div class="icon-badge">
-                  <i class="fa-solid fa-screwdriver-wrench"></i>
-                </div>
-                <div>
-                  <strong class="tab-widget-title">Montaje Industrial</strong>
-                  <span class="tab-widget-subtitle">Ingeniería y Ejecución</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- TAB 2: MANTENIMIENTO -->
-        <div id="tab-mantenimiento" class="tab-content-panel">
-          <div class="panel-grid">
-            <div class="panel-info">
-              <h3>Mantenimiento Preventivo y Correctivo</h3>
-              <p>
-                Servicios especializados para asegurar la máxima eficiencia y continuidad operativa de sus equipos: mantención de sistemas de calefacción, climatización, ventilación forzada, quemadores, termostatos y soporte en control y automatización industrial.
-              </p>
-            </div>
-
-            <div class="tab-interactive-canvas">
-              <div class="tab-canvas-bg-shape"></div>
-              <div class="tab-canvas-main-photo">
-                <img src="imagenes/img2.png" alt="Mantenimiento Industrial EFISER" />
-              </div>
-              <div class="tab-widget-float">
-                <div class="icon-badge">
-                  <i class="fa-solid fa-gears"></i>
-                </div>
-                <div>
-                  <strong class="tab-widget-title">Soporte Continuo</strong>
-                  <span class="tab-widget-subtitle"
-                    >Eficiencia Operativa</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
+</section>
     <!-- SECCIÓN: OBRAS POR CLIENTE -->
     <section
       class="company-section light-bg works-by-client-section"
@@ -212,67 +164,69 @@
           </p>
         </div>
 
-        <!-- SELECTORES DE CLIENTES CON LOGO -->
-        <div class="client-logo-filter-nav">
-          <button
-            type="button"
-            class="client-logo-btn active"
-            data-client="bravo-izquierdo"
-          >
-            <div class="logo-wrapper">
-              <img
-                src="imagenes/clientes/bravoizquierdo.jpg"
-                alt="Constructora Bravo Izquierdo"
-              />
-            </div>
-            <div class="client-btn-info">
-              <span class="client-name">Bravo Izquierdo</span>
-              <span class="client-count">3 Obras</span>
-            </div>
-          </button>
+        <!-- SELECTORES DE CLIENTES CON LOGO (ENVUELTO EN CONTENEDOR PARA MÁSCARA MÓVIL) -->
+        <div class="client-logo-filter-wrapper">
+          <div class="client-logo-filter-nav">
+            <button
+              type="button"
+              class="client-logo-btn active"
+              data-client="bravo-izquierdo"
+            >
+              <div class="logo-wrapper">
+                <img
+                  src="imagenes/clientes/bravoizquierdo.jpg"
+                  alt="Constructora Bravo Izquierdo"
+                />
+              </div>
+              <div class="client-btn-info">
+                <span class="client-name">Bravo Izquierdo</span>
+                <span class="client-count">3 Obras</span>
+              </div>
+            </button>
 
-          <button type="button" class="client-logo-btn" data-client="copahue">
-            <div class="logo-wrapper">
-              <img
-                src="imagenes/clientes/copahue.png"
-                alt="Constructora Copahue"
-              />
-            </div>
-            <div class="client-btn-info">
-              <span class="client-name">Copahue</span>
-              <span class="client-count">1 Obra</span>
-            </div>
-          </button>
+            <button type="button" class="client-logo-btn" data-client="copahue">
+              <div class="logo-wrapper">
+                <img
+                  src="imagenes/clientes/copahue.png"
+                  alt="Constructora Copahue"
+                />
+              </div>
+              <div class="client-btn-info">
+                <span class="client-name">Copahue</span>
+                <span class="client-count">1 Obra</span>
+              </div>
+            </button>
 
-          <button type="button" class="client-logo-btn" data-client="ebco">
-            <div class="logo-wrapper">
-              <img src="imagenes/clientes/ebco.jpeg" alt="Constructora EBCO" />
-            </div>
-            <div class="client-btn-info">
-              <span class="client-name">EBCO</span>
-              <span class="client-count">1 Obra</span>
-            </div>
-          </button>
+            <button type="button" class="client-logo-btn" data-client="ebco">
+              <div class="logo-wrapper">
+                <img src="imagenes/clientes/ebco.jpeg" alt="Constructora EBCO" />
+              </div>
+              <div class="client-btn-info">
+                <span class="client-name">EBCO</span>
+                <span class="client-count">1 Obra</span>
+              </div>
+            </button>
 
-          <button type="button" class="client-logo-btn" data-client="razo">
-            <div class="logo-wrapper">
-              <img src="imagenes/clientes/razo.jpeg" alt="Constructora Razo" />
-            </div>
-            <div class="client-btn-info">
-              <span class="client-name">Razo</span>
-              <span class="client-count">1 Obra</span>
-            </div>
-          </button>
+            <button type="button" class="client-logo-btn" data-client="razo">
+              <div class="logo-wrapper">
+                <img src="imagenes/clientes/razo.jpeg" alt="Constructora Razo" />
+              </div>
+              <div class="client-btn-info">
+                <span class="client-name">Razo</span>
+                <span class="client-count">1 Obra</span>
+              </div>
+            </button>
 
-          <button type="button" class="client-logo-btn" data-client="sigro">
-            <div class="logo-wrapper">
-              <img src="imagenes/clientes/sigro.png" alt="Constructora Sigro" />
-            </div>
-            <div class="client-btn-info">
-              <span class="client-name">Sigro</span>
-              <span class="client-count">2 Obras</span>
-            </div>
-          </button>
+            <button type="button" class="client-logo-btn" data-client="sigro">
+              <div class="logo-wrapper">
+                <img src="imagenes/clientes/sigro.png" alt="Constructora Sigro" />
+              </div>
+              <div class="client-btn-info">
+                <span class="client-name">Sigro</span>
+                <span class="client-count">2 Obras</span>
+              </div>
+            </button>
+          </div>
         </div>
 
         <!-- GRILLA DE OBRAS -->
@@ -345,11 +299,34 @@
     </section>
 
     <!-- SECCIÓN PROVEEDORES - INFINITE MARQUEE ULTRACLEAN -->
+<!-- SECCIÓN PROVEEDORES & CERTIFICACIÓN ANWO - INFINITE MARQUEE ULTRACLEAN -->
     <section class="providers-section" id="proyectos">
       <div class="container">
         <div class="section-header-center light-heading">
           <span class="tag">Respaldo de Marca & Calidad</span>
           <h2>Nuestros Proveedores Principales</h2>
+        </div>
+
+        <!-- CREDENCIAL OFICIAL DE SOCIO (Alternativa 1 Integrada en el Header) -->
+        <div class="anwo-certified-header-card">
+          <div class="anwo-seal-wrapper">
+            <img 
+              src="imagenes/anwo-autoriza.jpg" 
+              alt="Distribuidor Autorizado ANWO" 
+              loading="lazy"
+            />
+          </div>
+          <div class="anwo-certified-info">
+            <span class="certified-badge-tag">Certificación Oficial</span>
+            <h3>Distribuidor e Instalador Autorizado ANWO</h3>
+            <p>Contamos con respaldo técnico directo para garantizar la correcta selección, integración y mantenimiento de equipos de climatización bajo los más altos estándares del fabricante.</p>
+          </div>
+          <div class="anwo-certified-action">
+            <!-- Cambia el href por el enlace de tu certificado o archivo PDF si lo deseas -->
+            <a href="recursos/cartaPresentacion2026.pdf" target="_blank" class="btn-cta-copper btn-cert-action">
+              Ver Certificado <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -472,34 +449,6 @@
           </div>
           <div class="provider-card" aria-hidden="true">
             <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INTEGRACIÓN CON ANWO -->
-    <section class="anwo-integration-section">
-      <div class="container">
-        <div class="anwo-grid-card">
-          <a
-            href="https://efiser.cl/wp-content/uploads/2020/02/JT-03-01-EFISER-DISTRIBUIDOR-DE-PRODUCTOS-ANWO.pdf"
-            target="_blank"
-            title="Ver Certificado Autorizado ANWO"
-            class="anwo-img-clean"
-          >
-            <img
-              src="imagenes/anwo-autoriza.jpg"
-              alt="ANWO Distribuidor Autorizado - Especialistas en Climatización"
-            />
-          </a>
-
-          <div class="anwo-text-content">
-            <h3>Distribuidor e Instalador Acreditado</h3>
-            <p>
-              Contamos con respaldo técnico directo para la venta,
-              especificación y montaje de equipos ANWO en Chile, garantizando
-              repuestos originales.
-            </p>
           </div>
         </div>
       </div>
