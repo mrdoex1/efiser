@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EFISER SpA | Climatización & Servicios Industriales</title>
+    <!-- Meta descripción agregada para SEO -->
+    <meta
+      name="description"
+      content="EFISER SpA: Especialistas en instalación, montaje y mantenimiento preventivo y correctivo de sistemas de climatización en la Región de Valparaíso, Chile."
+    />
+
     <!-- Fuentes Google: Outfit & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,15 +18,18 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
     <!-- FontAwesome 6 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- 1. Cargar la librería oficial de EmailJS -->
+
+    <!-- Librería EmailJS con atributo defer para evitar bloqueo de renderizado -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      defer
     ></script>
 
     <!-- Estilos CSS -->
@@ -31,627 +40,699 @@
     <div id="scroll-progress"></div>
 
     <!-- NAVBAR OSCURO CON LOGO BLANCO -->
-   <header id="header">
-  <div class="container nav-inner">
-    <a href="#inicio" class="brand-logo">
-      <img
-        src="imagenes/efiser.png"
-        alt="EFISER Climatización y Servicios Industriales"
-      />
-    </a>
-
-    <!-- Botón Hamburguesa para Móviles -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-
-    <!-- Navegación principal -->
-    <nav id="mainNav">
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#obras-por-cliente">Clientes</a></li>
-        <li><a href="#empresa">Empresa</a></li>
-        <li>
-          <a href="#contacto" class="btn-cta-copper"> Contacto </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-    <!-- HERO DINÁMICO & MODERNO -->
-    <section class="hero-dynamic" id="inicio">
-  <!-- Galería de fondo dinámica integrada -->
-  <div class="hero-slideshow-container" id="heroSlideshow">
-    <div class="slide active" style="background-image: url('imagenes/galeria/foto1.jpeg');"></div>
-    <div class="slide" style="background-image: url('imagenes/galeria/foto4.jpeg');"></div>
-     <div class="slide" style="background-image: url('imagenes/galeria/foto5.jpeg');"></div>
-      <div class="slide" style="background-image: url('imagenes/galeria/foto6.jpeg');"></div>
-       <div class="slide" style="background-image: url('imagenes/galeria/foto7.jpeg');"></div>
-        <div class="slide" style="background-image: url('imagenes/galeria/foto8.jpeg');"></div>
-         <div class="slide" style="background-image: url('imagenes/galeria/foto12.jpeg');"></div>
-          <div class="slide" style="background-image: url('imagenes/galeria/foto11.jpeg');"></div>
-    <!-- Capa oscura de contraste (Overlay) para asegurar la lectura UX/UI -->
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="container hero-split-layout">
-    <div class="hero-text-content">
-      <div class="tag-pill">Cobertura Región de Valparaíso</div>
-      <h1>
-        Expertos en Instalación y Mantenimiento
-        <span> de Sistemas de Climatización</span>
-      </h1>
-      <p>
-        Ofrecemos soporte técnico integral y gestión especializada para
-        proyectos residenciales, comerciales e industriales.
-      </p>
-      <div class="hero-cta-wrapper">
-        <a href="#contacto" class="btn-cta-copper btn-hero-lg">
-          Solicitar Asesoría <i class="fa-solid fa-arrow-right"></i>
+    <header id="header">
+      <div class="container nav-inner">
+        <a href="#inicio" class="brand-logo">
+          <img
+            src="imagenes/efiser.webp"
+            alt="EFISER Climatización y Servicios Industriales"
+            width="153"
+            height="100"
+          />
         </a>
+
+        <!-- Botón Hamburguesa para Móviles -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- Navegación principal -->
+        <nav id="mainNav">
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#obras-por-cliente">Clientes</a></li>
+            <li><a href="#empresa">Empresa</a></li>
+            <li>
+              <a href="#contacto" class="btn-cta-copper"> Contacto </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
+    </header>
 
-  
-  </div>
-</section>
-
-    <!-- SECCIÓN: SERVICIOS -->
-   <section id="servicios" class="services-section-light">
-    <div class="services-container">
-        <!-- Encabezado de sección -->
-        <div class="section-header">
-            <span class="section-tag">LO QUE HACEMOS</span>
-            <h2>Servicios Especializados</h2>
+    <!-- CONTENEDOR PRINCIPAL SEMÁNTICO (MAIN) -->
+    <main>
+      <!-- HERO DINÁMICO & MODERNO -->
+      <section class="hero-dynamic" id="inicio">
+        <!-- Galería de fondo dinámica integrada -->
+        <div class="hero-slideshow-container" id="heroSlideshow">
+          <div
+            class="slide active"
+            style="background-image: url('imagenes/galeria/foto1.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto4.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto5.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto6.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto7.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto8.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto12.webp');"
+          ></div>
+          <div
+            class="slide"
+            style="background-image: url('imagenes/galeria/foto11.webp');"
+          ></div>
+          <!-- Capa oscura de contraste (Overlay) -->
+          <div class="hero-overlay"></div>
         </div>
 
-        <!-- Grilla Dual (2 Columnas simétricas) -->
-        <div class="services-dual-grid">
-            
+        <div class="container hero-split-layout">
+          <div class="hero-text-content">
+            <div class="tag-pill">Cobertura Región de Valparaíso</div>
+            <h1>
+              Expertos en Instalación y Mantenimiento
+              <span> de Sistemas de Climatización</span>
+            </h1>
+            <p>
+              Ofrecemos soporte técnico integral y gestión especializada para
+              proyectos residenciales, comerciales e industriales.
+            </p>
+            <div class="hero-cta-wrapper">
+              <a href="#contacto" class="btn-cta-copper btn-hero-lg">
+                Solicitar Asesoría <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: SERVICIOS -->
+      <section id="servicios" class="services-section-light">
+        <div class="services-container">
+          <div class="section-header">
+            <span class="section-tag">LO QUE HACEMOS</span>
+            <h2>Servicios Especializados</h2>
+          </div>
+
+          <div class="services-dual-grid">
             <!-- Servicio 1 -->
             <div class="service-card-modern">
-                <div class="service-image-wrapper">
-                    <img src="imagenes/galeria/foto11.jpeg" alt="Instalación y Montaje Técnico">
-                </div>
-                <div class="service-content">
-                    <h3>Instalación y Montaje Técnico</h3>
-                    <p>Desarrollamos proyectos de instalación y montaje de sistemas de climatización de alta eficiencia para el sector industrial y corporativo, asegurando estándares óptimos de rendimiento.</p>
-                    <a href="#contacto" class="service-action-link">Cotizar Servicio <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
+              <div class="service-image-wrapper">
+                <img
+                  src="imagenes/galeria/foto11.webp"
+                  alt="Instalación y Montaje Técnico"
+                  width="583"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-content">
+                <h3>Instalación y Montaje Técnico</h3>
+                <p>
+                  Desarrollamos proyectos de instalación y montaje de sistemas de
+                  climatización de alta eficiencia para el sector industrial y
+                  corporativo, asegurando estándares óptimos de rendimiento.
+                </p>
+                <a href="#contacto" class="service-action-link"
+                  >Cotizar Servicio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
 
             <!-- Servicio 2 -->
             <div class="service-card-modern">
-                <div class="service-image-wrapper">
-                    <img src="imagenes/galeria/foto12.jpeg" alt="Mantenimiento de Climatización">
-                </div>
-                <div class="service-content">
-                    <h3>Mantenimiento Preventivo y Correctivo</h3>
-                    <p>Planes integrales de mantenimiento para garantizar la continuidad operacional, reducir consumo energético y prolongar la vida útil de los equipos de climatización de tus instalaciones.</p>
-                    <a href="#contacto" class="service-action-link">Cotizar Servicio <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
+              <div class="service-image-wrapper">
+                <img
+                  src="imagenes/galeria/foto12.webp"
+                  alt="Mantenimiento de Climatización"
+                  width="583"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="service-content">
+                <h3>Mantenimiento Preventivo y Correctivo</h3>
+                <p>
+                  Planes integrales de mantenimiento para garantizar la continuidad
+                  operacional, reducir consumo energético y prolongar la vida útil
+                  de los equipos de climatización de tus instalaciones.
+                </p>
+                <a href="#contacto" class="service-action-link"
+                  >Cotizar Servicio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
-
+          </div>
         </div>
-    </div>
-</section>
-    <!-- SECCIÓN: OBRAS POR CLIENTE -->
-    <section
-      class="company-section light-bg works-by-client-section"
-      id="obras-por-cliente"
-    >
-      <div class="container">
-        <div class="section-header-center light-heading">
-          <span class="tag">Portafolio Interactivo</span>
-          <h2>Algunos de Nuestros Clientes</h2>
-          <p class="section-subtitle-muted">
-            Selecciona una constructora para explorar sus proyectos ejecutados.
-          </p>
-        </div>
+      </section>
 
-        <!-- SELECTORES DE CLIENTES CON LOGO (ENVUELTO EN CONTENEDOR PARA MÁSCARA MÓVIL) -->
-        <div class="client-logo-filter-wrapper">
-          <div class="client-logo-filter-nav">
-            <button
-              type="button"
-              class="client-logo-btn active"
+      <!-- SECCIÓN: OBRAS POR CLIENTE -->
+      <section
+        class="company-section light-bg works-by-client-section"
+        id="obras-por-cliente"
+      >
+        <div class="container">
+          <div class="section-header-center light-heading">
+            <span class="tag">Portafolio Interactivo</span>
+            <h2>Algunos de Nuestros Clientes</h2>
+            <p class="section-subtitle-muted">
+              Selecciona una constructora para explorar sus proyectos ejecutados.
+            </p>
+          </div>
+
+          <div class="client-logo-filter-wrapper">
+            <div class="client-logo-filter-nav">
+              <button
+                type="button"
+                class="client-logo-btn active"
+                data-client="bravo-izquierdo"
+              >
+                <div class="logo-wrapper">
+                  <img
+                    src="imagenes/clientes/bravoizquierdo.webp"
+                    alt="Constructora Bravo Izquierdo"
+                    width="22"
+                    height="22"
+                  />
+                </div>
+                <div class="client-btn-info">
+                  <span class="client-name">Bravo Izquierdo</span>
+                  <span class="client-count">3 Obras</span>
+                </div>
+              </button>
+
+              <button
+                type="button"
+                class="client-logo-btn"
+                data-client="copahue"
+              >
+                <div class="logo-wrapper">
+                  <img
+                    src="imagenes/clientes/copahue.webp"
+                    alt="Constructora Copahue"
+                    width="22"
+                    height="22"
+                  />
+                </div>
+                <div class="client-btn-info">
+                  <span class="client-name">Copahue</span>
+                  <span class="client-count">1 Obra</span>
+                </div>
+              </button>
+
+              <button type="button" class="client-logo-btn" data-client="ebco">
+                <div class="logo-wrapper">
+                  <img
+                    src="imagenes/clientes/ebco.webp"
+                    alt="Constructora EBCO"
+                    width="22"
+                    height="22"
+                  />
+                </div>
+                <div class="client-btn-info">
+                  <span class="client-name">EBCO</span>
+                  <span class="client-count">1 Obra</span>
+                </div>
+              </button>
+
+              <button type="button" class="client-logo-btn" data-client="razo">
+                <div class="logo-wrapper">
+                  <img
+                    src="imagenes/clientes/razo.webp"
+                    alt="Constructora Razo"
+                    width="22"
+                    height="22"
+                  />
+                </div>
+                <div class="client-btn-info">
+                  <span class="client-name">Razo</span>
+                  <span class="client-count">1 Obra</span>
+                </div>
+              </button>
+
+              <button type="button" class="client-logo-btn" data-client="sigro">
+                <div class="logo-wrapper">
+                  <img
+                    src="imagenes/clientes/sigro.webp"
+                    alt="Constructora Sigro"
+                    width="22"
+                    height="22"
+                  />
+                </div>
+                <div class="client-btn-info">
+                  <span class="client-name">Sigro</span>
+                  <span class="client-count">2 Obras</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- GRILLA DE OBRAS (Encabezados corregidos de h4 a h3) -->
+          <div class="works-filter-grid">
+            <div
+              class="work-card-item light-card"
               data-client="bravo-izquierdo"
             >
-              <div class="logo-wrapper">
-                <img
-                  src="imagenes/clientes/bravoizquierdo.jpg"
-                  alt="Constructora Bravo Izquierdo"
-                />
+              <div class="work-icon"><i class="fa-solid fa-city"></i></div>
+              <div class="work-info">
+                <h3>UNAB 2</h3>
+                <span class="work-client">Constructora Bravo Izquierdo</span>
               </div>
-              <div class="client-btn-info">
-                <span class="client-name">Bravo Izquierdo</span>
-                <span class="client-count">3 Obras</span>
-              </div>
-            </button>
-
-            <button type="button" class="client-logo-btn" data-client="copahue">
-              <div class="logo-wrapper">
-                <img
-                  src="imagenes/clientes/copahue.png"
-                  alt="Constructora Copahue"
-                />
-              </div>
-              <div class="client-btn-info">
-                <span class="client-name">Copahue</span>
-                <span class="client-count">1 Obra</span>
-              </div>
-            </button>
-
-            <button type="button" class="client-logo-btn" data-client="ebco">
-              <div class="logo-wrapper">
-                <img src="imagenes/clientes/ebco.jpeg" alt="Constructora EBCO" />
-              </div>
-              <div class="client-btn-info">
-                <span class="client-name">EBCO</span>
-                <span class="client-count">1 Obra</span>
-              </div>
-            </button>
-
-            <button type="button" class="client-logo-btn" data-client="razo">
-              <div class="logo-wrapper">
-                <img src="imagenes/clientes/razo.jpeg" alt="Constructora Razo" />
-              </div>
-              <div class="client-btn-info">
-                <span class="client-name">Razo</span>
-                <span class="client-count">1 Obra</span>
-              </div>
-            </button>
-
-            <button type="button" class="client-logo-btn" data-client="sigro">
-              <div class="logo-wrapper">
-                <img src="imagenes/clientes/sigro.png" alt="Constructora Sigro" />
-              </div>
-              <div class="client-btn-info">
-                <span class="client-name">Sigro</span>
-                <span class="client-count">2 Obras</span>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- GRILLA DE OBRAS -->
-        <div class="works-filter-grid">
-          <div class="work-card-item light-card" data-client="bravo-izquierdo">
-            <div class="work-icon"><i class="fa-solid fa-city"></i></div>
-            <div class="work-info">
-              <h4>UNAB 2</h4>
-              <span class="work-client">Constructora Bravo Izquierdo</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card" data-client="bravo-izquierdo">
-            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="work-info">
-              <h4>Senior Suite La Dehesa</h4>
-              <span class="work-client">Constructora Bravo Izquierdo</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card" data-client="bravo-izquierdo">
-            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="work-info">
-              <h4>Cartoni 4 Norte</h4>
-              <span class="work-client">Constructora Bravo Izquierdo</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card hide" data-client="copahue">
-            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="work-info">
-              <h4>Edificio Mirador Soza</h4>
-              <span class="work-client">Constructora Copahue</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card hide" data-client="ebco">
-            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="work-info">
-              <h4>Edificio Entrelomas 5</h4>
-              <span class="work-client">Constructora EBCO</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card hide" data-client="razo">
-            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="work-info">
-              <h4>Edificio Plaza Los Pinos 1 y 2</h4>
-              <span class="work-client">Constructora Razo</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card hide" data-client="sigro">
-            <div class="work-icon"><i class="fa-solid fa-city"></i></div>
-            <div class="work-info">
-              <h4>Edificios Vista Urbana</h4>
-              <span class="work-client">Constructora Sigro</span>
-            </div>
-          </div>
-
-          <div class="work-card-item light-card hide" data-client="sigro">
-            <div class="work-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="work-info">
-              <h4>Edificio Mirador Barón</h4>
-              <span class="work-client">Constructora Sigro</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN PROVEEDORES - INFINITE MARQUEE ULTRACLEAN -->
-<!-- SECCIÓN PROVEEDORES & CERTIFICACIÓN ANWO - INFINITE MARQUEE ULTRACLEAN -->
-    <section class="providers-section" id="proyectos">
-      <div class="container">
-        <div class="section-header-center light-heading">
-          <span class="tag">Respaldo de Marca & Calidad</span>
-          <h2>Nuestros Proveedores Principales</h2>
-        </div>
-
-        <!-- CREDENCIAL OFICIAL DE SOCIO (Alternativa 1 Integrada en el Header) -->
-        <div class="anwo-certified-header-card">
-          <div class="anwo-seal-wrapper">
-            <img 
-              src="imagenes/anwo-autoriza.jpg" 
-              alt="Distribuidor Autorizado ANWO" 
-              loading="lazy"
-            />
-          </div>
-          <div class="anwo-certified-info">
-            <span class="certified-badge-tag">Certificación Oficial</span>
-            <h3>Distribuidor e Instalador Autorizado ANWO</h3>
-            <p>Contamos con respaldo técnico directo para garantizar la correcta selección, integración y mantenimiento de equipos de climatización bajo los más altos estándares del fabricante.</p>
-          </div>
-          <div class="anwo-certified-action">
-            <!-- Cambia el href por el enlace de tu certificado o archivo PDF si lo deseas -->
-            <a href="recursos/cartaPresentacion2026.pdf" target="_blank" class="btn-cta-copper btn-cert-action">
-              Ver Certificado <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="marquee-wrapper"
-        aria-label="Carrusel de proveedores principales"
-      >
-        <div class="marquee-track">
-          <!-- BLOQUE 1 (Original) -->
-          <div class="provider-card">
-            <img
-              src="imagenes/Proveedores/anwo.png"
-              alt="ANWO"
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card">
-            <img
-              src="imagenes/Proveedores/cosmoplas.png"
-              alt="Cosmoplas"
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card">
-            <img
-              src="imagenes/Proveedores/recal.png"
-              alt="Recal"
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card">
-            <img
-              src="imagenes/Proveedores/SyP.png"
-              alt="Soler & Palau"
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card">
-            <img
-              src="imagenes/Proveedores/trespi.png"
-              alt="Trespi"
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card">
-            <img
-              src="imagenes/Proveedores/rhona.png"
-              alt="Rhona"
-              loading="lazy"
-            />
-          </div>
-
-          <!-- BLOQUE 2 (Duplicado 1) -->
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img
-              src="imagenes/Proveedores/cosmoplas.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
-          </div>
-
-          <!-- BLOQUE 3 (Duplicado 2) -->
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img
-              src="imagenes/Proveedores/cosmoplas.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
-          </div>
-
-          <!-- BLOQUE 4 (Duplicado 3) -->
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/anwo.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img
-              src="imagenes/Proveedores/cosmoplas.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/recal.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/SyP.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/trespi.png" alt="" loading="lazy" />
-          </div>
-          <div class="provider-card" aria-hidden="true">
-            <img src="imagenes/Proveedores/rhona.png" alt="" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN NUESTRA EMPRESA -->
-    <section class="company-section" id="empresa">
-      <div class="container">
-        <div class="section-header-center">
-          <span class="tag">Trayectoria & Filosofía</span>
-          <h2>Nuestra Empresa & Propósito</h2>
-        </div>
-
-        <div class="accordion-container">
-  <!-- Item 1 -->
-  <details class="accordion-item" name="accordion-empresa">
-    <summary class="accordion-header">
-      <div class="accordion-header-left">
-        <div class="card-icon">
-          <i class="fa-solid fa-building"></i>
-        </div>
-        <h3>Nuestra Empresa</h3>
-      </div>
-      <i class="fa-solid fa-chevron-down accordion-icon"></i>
-    </summary>
-    <div class="accordion-content">
-      <p>
-        Somos una empresa jurídicamente emergente y joven, con vasta
-        experiencia de los socios, compuesta por un equipo profesional,
-        dedicado a generar valor en cada etapa de la relación
-        cliente/proveedor.
-      </p>
-    </div>
-  </details>
-
-  <!-- Item 2 -->
-  <details class="accordion-item" name="accordion-empresa">
-    <summary class="accordion-header">
-      <div class="accordion-header-left">
-        <div class="card-icon">
-          <i class="fa-solid fa-bullseye"></i>
-        </div>
-        <h3>Misión Corporativa</h3>
-      </div>
-      <i class="fa-solid fa-chevron-down accordion-icon"></i>
-    </summary>
-    <div class="accordion-content">
-      <p>
-        Nuestro propósito es proveer y administrar un servicio de
-        calidad en tiempo oportuno y forma óptima, entregando asesoría,
-        seguridad, tranquilidad y confianza en el desarrollo del
-        mantenimiento.<br /><br />
-        Siempre habrá forma de responder: contamos con las herramientas,
-        preparación, experiencia y el compromiso de "hacer bien las
-        cosas".
-      </p>
-    </div>
-  </details>
-
-  <!-- Item 3 -->
-  <details class="accordion-item" name="accordion-empresa">
-    <summary class="accordion-header">
-      <div class="accordion-header-left">
-        <div class="card-icon"><i class="fa-solid fa-star"></i></div>
-        <h3>Ventaja Comparativa</h3>
-      </div>
-      <i class="fa-solid fa-chevron-down accordion-icon"></i>
-    </summary>
-    <div class="accordion-content">
-      <p>
-        Está dada por la experiencia técnica, comercial, ejecutiva y
-        administrativa de ambos socios, puestas al servicio del cliente
-        y/o usuario.
-      </p>
-    </div>
-  </details>
-
-  <!-- Item 4 -->
-  <details class="accordion-item" name="accordion-empresa">
-    <summary class="accordion-header">
-      <div class="accordion-header-left">
-        <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
-        <h3>Ventaja Competitiva</h3>
-      </div>
-      <i class="fa-solid fa-chevron-down accordion-icon"></i>
-    </summary>
-    <div class="accordion-content">
-      <p>
-        Está esencialmente enfocada en la capacidad de adaptación de la
-        real necesidad, la utilización de verdaderos canales efectivos y
-        directos de comunicación.
-      </p>
-    </div>
-  </details>
-</div>
-
-        <div class="company-action-wrapper">
-          <a
-            href="recursos/cartaPresentacion2026.pdf"
-            target="_blank"
-            class="btn-carta-empresa"
-          >
-            <i class="fa-solid fa-file-pdf"></i> Descargar Carta de Presentación
-            EFISER
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contact-section" id="contacto">
-      <div class="container contact-grid">
-        <div class="contact-text-col">
-          <div class="section-header-left">
-            <span class="tag">Atención Personalizada</span>
-          </div>
-          <h2 class="contact-title">Conversemos sobre su Proyecto</h2>
-          <p class="contact-p">
-            Sabemos que cada proyecto es único y requiere soluciones a la
-            medida. Nuestro equipo de profesionales está listo para asesorarle
-            en cada etapa, resolver sus dudas y brindar el acompañamiento
-            técnico que necesita.
-          </p>
-
-          <p class="contact-p">
-            Póngase en contacto con nosotros hoy mismo. Responderemos a la
-            brevedad para coordinar una visita en terreno, evaluar sus
-            requerimientos y entregarle una cotización detallada sin compromiso.
-          </p>
-        </div>
-
-        <div class="contact-card-form">
-          <!-- Cambiamos el onsubmit por el endpoint del servicio de correo -->
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="form-nombre">Nombre o Razón Social</label>
-              <input
-                type="text"
-                id="form-nombre"
-                name="name"
-                class="form-input"
-                required
-                placeholder="Ej: Juan Pérez / Empresa SpA"
-              />
             </div>
 
-            <div class="form-group">
-              <label for="form-email">Correo Electrónico</label>
-              <input
-                type="email"
-                id="form-email"
-                name="email"
-                class="form-input"
-                required
-                placeholder="ejemplo@correo.cl"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="form-unidad">Unidad de Negocio de Interés</label>
-              <select
-                id="form-unidad"
-                name="unidad"
-                class="form-input"
-                required
-              >
-                <option value="">Seleccione una opción</option>
-                <option value="Instalación">Instalación</option>
-                <option value="Mantención">Mantención</option>
-                <option value="Instalación & Mantención">
-                  Instalación & Mantención
-                </option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="form-mensaje">Mensaje</label>
-              <textarea
-                id="form-mensaje"
-                name="message"
-                class="form-input"
-                rows="4"
-                required
-                placeholder="Detalle brevemente su requerimiento..."
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              id="btn-submit"
-              class="btn-cta-copper btn-submit-full"
+            <div
+              class="work-card-item light-card"
+              data-client="bravo-izquierdo"
             >
-              Enviar Correo
-            </button>
-          </form>
+              <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="work-info">
+                <h3>Senior Suite La Dehesa</h3>
+                <span class="work-client">Constructora Bravo Izquierdo</span>
+              </div>
+            </div>
 
-          <!-- Mensaje de éxito oculto inicialmente -->
-          <div
-            id="form-success-message"
-            class="form-success-box"
-            style="display: none"
-          >
-            <i class="fa-solid fa-circle-check"></i>
-            <div>
-              <h4>¡Mensaje enviado con éxito!</h4>
+            <div
+              class="work-card-item light-card"
+              data-client="bravo-izquierdo"
+            >
+              <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="work-info">
+                <h3>Cartoni 4 Norte</h3>
+                <span class="work-client">Constructora Bravo Izquierdo</span>
+              </div>
+            </div>
+
+            <div class="work-card-item light-card hide" data-client="copahue">
+              <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="work-info">
+                <h3>Edificio Mirador Soza</h3>
+                <span class="work-client">Constructora Copahue</span>
+              </div>
+            </div>
+
+            <div class="work-card-item light-card hide" data-client="ebco">
+              <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="work-info">
+                <h3>Edificio Entrelomas 5</h3>
+                <span class="work-client">Constructora EBCO</span>
+              </div>
+            </div>
+
+            <div class="work-card-item light-card hide" data-client="razo">
+              <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="work-info">
+                <h3>Edificio Plaza Los Pinos 1 y 2</h3>
+                <span class="work-client">Constructora Razo</span>
+              </div>
+            </div>
+
+            <div class="work-card-item light-card hide" data-client="sigro">
+              <div class="work-icon"><i class="fa-solid fa-city"></i></div>
+              <div class="work-info">
+                <h3>Edificios Vista Urbana</h3>
+                <span class="work-client">Constructora Sigro</span>
+              </div>
+            </div>
+
+            <div class="work-card-item light-card hide" data-client="sigro">
+              <div class="work-icon"><i class="fa-solid fa-building"></i></div>
+              <div class="work-info">
+                <h3>Edificio Mirador Barón</h3>
+                <span class="work-client">Constructora Sigro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN PROVEEDORES & CERTIFICACIÓN ANWO -->
+      <section class="providers-section" id="proyectos">
+        <div class="container">
+          <div class="section-header-center light-heading">
+            <span class="tag">Respaldo de Marca & Calidad</span>
+            <h2>Nuestros Proveedores Principales</h2>
+          </div>
+
+          <div class="anwo-certified-header-card">
+            <div class="anwo-seal-wrapper">
+              <img
+                src="imagenes/anwo-autoriza.webp"
+                alt="Distribuidor Autorizado ANWO"
+                width="210"
+                height="60"
+                loading="lazy"
+              />
+            </div>
+            <div class="anwo-certified-info">
+              <span class="certified-badge-tag">Certificación Oficial</span>
+              <h3>Distribuidor e Instalador Autorizado ANWO</h3>
               <p>
-                Gracias por contactarnos. Nos pondremos en contacto a la
-                brevedad.
+                Contamos con respaldo técnico directo para garantizar la correcta
+                selección, integración y mantenimiento de equipos de
+                climatización bajo los más altos estándares del fabricante.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        <div
+          class="marquee-wrapper"
+          aria-label="Carrusel de proveedores principales"
+        >
+          <div class="marquee-track">
+            <!-- BLOQUE 1 -->
+            <div class="provider-card">
+              <img
+                src="imagenes/Proveedores/anwo.webp"
+                alt="ANWO"
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card">
+              <img
+                src="imagenes/Proveedores/cosmoplas.webp"
+                alt="Cosmoplas"
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card">
+              <img
+                src="imagenes/Proveedores/recal.webp"
+                alt="Recal"
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card">
+              <img
+                src="imagenes/Proveedores/SyP.webp"
+                alt="Soler & Palau"
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card">
+              <img
+                src="imagenes/Proveedores/trespi.webp"
+                alt="Trespi"
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card">
+              <img
+                src="imagenes/Proveedores/rhona.webp"
+                alt="Rhona"
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- BLOQUE 2 (Duplicados para efecto infinito) -->
+            <div class="provider-card" aria-hidden="true">
+              <img
+                src="imagenes/Proveedores/anwo.webp"
+                alt=""
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card" aria-hidden="true">
+              <img
+                src="imagenes/Proveedores/cosmoplas.webp"
+                alt=""
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card" aria-hidden="true">
+              <img
+                src="imagenes/Proveedores/recal.webp"
+                alt=""
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card" aria-hidden="true">
+              <img
+                src="imagenes/Proveedores/SyP.webp"
+                alt=""
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card" aria-hidden="true">
+              <img
+                src="imagenes/Proveedores/trespi.webp"
+                alt=""
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+            <div class="provider-card" aria-hidden="true">
+              <img
+                src="imagenes/Proveedores/rhona.webp"
+                alt=""
+                width="130"
+                height="50"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN NUESTRA EMPRESA -->
+      <section class="company-section" id="empresa">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="tag">Trayectoria & Filosofía</span>
+            <h2>Nuestra Empresa & Propósito</h2>
+          </div>
+
+          <div class="accordion-container">
+            <!-- Item 1 -->
+            <details class="accordion-item" name="accordion-empresa">
+              <summary class="accordion-header">
+                <div class="accordion-header-left">
+                  <div class="card-icon">
+                    <i class="fa-solid fa-building"></i>
+                  </div>
+                  <h3>Nuestra Empresa</h3>
+                </div>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </summary>
+              <div class="accordion-content">
+                <p>
+                  Somos una empresa jurídicamente emergente y joven, con vasta
+                  experiencia de los socios, compuesta por un equipo profesional,
+                  dedicado a generar valor en cada etapa de la relación
+                  cliente/proveedor.
+                </p>
+              </div>
+            </details>
+
+            <!-- Item 2 -->
+            <details class="accordion-item" name="accordion-empresa">
+              <summary class="accordion-header">
+                <div class="accordion-header-left">
+                  <div class="card-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                  </div>
+                  <h3>Misión Corporativa</h3>
+                </div>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </summary>
+              <div class="accordion-content">
+                <p>
+                  Nuestro propósito es proveer y administrar un servicio de
+                  calidad en tiempo oportuno y forma óptima, entregando asesoría,
+                  seguridad, tranquilidad y confianza en el desarrollo del
+                  mantenimiento.<br /><br />
+                  Siempre habrá forma de responder: contamos con las
+                  herramientas, preparación, experiencia y el compromiso de
+                  "hacer bien las cosas".
+                </p>
+              </div>
+            </details>
+
+            <!-- Item 3 -->
+            <details class="accordion-item" name="accordion-empresa">
+              <summary class="accordion-header">
+                <div class="accordion-header-left">
+                  <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+                  <h3>Ventaja Comparativa</h3>
+                </div>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </summary>
+              <div class="accordion-content">
+                <p>
+                  Está dada por la experiencia técnica, comercial, ejecutiva y
+                  administrativa de ambos socios, puestas al servicio del cliente
+                  y/o usuario.
+                </p>
+              </div>
+            </details>
+
+            <!-- Item 4 -->
+            <details class="accordion-item" name="accordion-empresa">
+              <summary class="accordion-header">
+                <div class="accordion-header-left">
+                  <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
+                  <h3>Ventaja Competitiva</h3>
+                </div>
+                <i class="fa-solid fa-chevron-down accordion-icon"></i>
+              </summary>
+              <div class="accordion-content">
+                <p>
+                  Está esencialmente enfocada en la capacidad de adaptación de la
+                  real necesidad, la utilización de verdaderos canales efectivos y
+                  directos de comunicación.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <div class="company-action-wrapper">
+            <a
+              href="recursos/cartaPresentacion2026.pdf"
+              target="_blank"
+              class="btn-carta-empresa"
+            >
+              <i class="fa-solid fa-file-pdf"></i> Descargar Carta de Presentación
+              EFISER
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section class="contact-section" id="contacto">
+        <div class="container contact-grid">
+          <div class="contact-text-col">
+            <div class="section-header-left">
+              <span class="tag">Atención Personalizada</span>
+            </div>
+            <h2 class="contact-title">Conversemos sobre su Proyecto</h2>
+            <p class="contact-p">
+              Sabemos que cada proyecto es único y requiere soluciones a la
+              medida. Nuestro equipo de profesionales está listo para asesorarle
+              en cada etapa, resolver sus dudas y brindar el acompañamiento
+              técnico que necesita.
+            </p>
+
+            <p class="contact-p">
+              Póngase en contacto con nosotros hoy mismo. Responderemos a la
+              brevedad para coordinar una visita en terreno, evaluar sus
+              requerimientos y entregarle una cotización detallada sin
+              compromiso.
+            </p>
+          </div>
+
+          <div class="contact-card-form">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-nombre">Nombre o Razón Social</label>
+                <input
+                  type="text"
+                  id="form-nombre"
+                  name="name"
+                  class="form-input"
+                  required
+                  placeholder="Ej: Juan Pérez / Empresa SpA"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Correo Electrónico</label>
+                <input
+                  type="email"
+                  id="form-email"
+                  name="email"
+                  class="form-input"
+                  required
+                  placeholder="ejemplo@correo.cl"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-unidad">Unidad de Negocio de Interés</label>
+                <select
+                  id="form-unidad"
+                  name="unidad"
+                  class="form-input"
+                  required
+                >
+                  <option value="">Seleccione una opción</option>
+                  <option value="Instalación">Instalación</option>
+                  <option value="Mantención">Mantención</option>
+                  <option value="Instalación & Mantención">
+                    Instalación & Mantención
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="form-mensaje">Mensaje</label>
+                <textarea
+                  id="form-mensaje"
+                  name="message"
+                  class="form-input"
+                  rows="4"
+                  required
+                  placeholder="Detalle brevemente su requerimiento..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="btn-submit"
+                class="btn-cta-copper btn-submit-full"
+              >
+                Enviar Correo
+              </button>
+            </form>
+
+            <div
+              id="form-success-message"
+              class="form-success-box"
+              style="display: none"
+            >
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <h4>¡Mensaje enviado con éxito!</h4>
+                <p>
+                  Gracias por contactarnos. Nos pondremos en contacto a la
+                  brevedad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -661,9 +742,11 @@
           <div class="footer-brand-col">
             <a href="#inicio" class="footer-logo-link">
               <img
-                src="imagenes/efiser.png"
+                src="imagenes/efiser.webp"
                 alt="EFISER SpA"
                 class="footer-logo-img"
+                width="184"
+                height="120"
               />
             </a>
             <p class="footer-brand-desc">
@@ -684,17 +767,21 @@
               </div>
             </div>
 
-           <div class="footer-info-item">
-  <i class="fa-solid fa-phone footer-icon"></i>
-  <div>
-    <strong class="footer-info-label">Teléfonos</strong>
-    <div class="footer-phones-group">
-      <a href="tel:+56989113315" class="footer-info-link">+56 9 8911 3315</a>
-      <span class="footer-phone-separator">/</span>
-      <a href="tel:+56987296918" class="footer-info-link">+56 9 8729 6918</a>
-    </div>
-  </div>
-</div>
+            <div class="footer-info-item">
+              <i class="fa-solid fa-phone footer-icon"></i>
+              <div>
+                <strong class="footer-info-label">Teléfonos</strong>
+                <div class="footer-phones-group">
+                  <a href="tel:+56989113315" class="footer-info-link"
+                    >+56 9 8911 3315</a
+                  >
+                  <span class="footer-phone-separator">/</span>
+                  <a href="tel:+56987296918" class="footer-info-link"
+                    >+56 9 8729 6918</a
+                  >
+                </div>
+              </div>
+            </div>
 
             <div class="footer-info-item">
               <i class="fa-solid fa-location-dot footer-icon"></i>
@@ -732,18 +819,28 @@
 
     <!-- JAVASCRIPT -->
     <script src="scripts.js"></script>
-    <a href="https://wa.me/56989113315?text=Hola,%20me%20gustaría%20más%20información%20sobre%20sus%20servicios" 
-   class="tech-whatsapp-btn" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   aria-label="Contactar por WhatsApp">
-    <div class="tech-icon-wrapper">
-        <!-- Ícono SVG de WhatsApp -->
-        <svg class="whatsapp-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+
+    <!-- Botón flotante WhatsApp -->
+    <a
+      href="https://wa.me/56989113315?text=Hola,%20me%20gustaría%20más%20información%20sobre%20sus%20servicios"
+      class="tech-whatsapp-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+    >
+      <div class="tech-icon-wrapper">
+        <svg
+          class="whatsapp-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+          />
         </svg>
-    </div>
-    <span class="tech-tooltip">¡Hablemos!</span>
-</a>
+      </div>
+      <span class="tech-tooltip">¡Hablemos!</span>
+    </a>
   </body>
 </html>
